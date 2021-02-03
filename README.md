@@ -1,7 +1,9 @@
 <div align="center">
 <img src="images/logo.png">
 <h1>Home Assistant Add-on: Frpc</h1>
+
 [![GitHub release](https://img.shields.io/github/tag/fatedier/frp.svg?label=release)](https://github.com/fatedier/frp/releases)
+
 <br>
 <p>Run <a href="https://github.com/fatedier/frp">frp client</a> as a Home Assistant Add-on</p>
 </div>
