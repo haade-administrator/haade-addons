@@ -10,13 +10,16 @@
   "host_network": true,
   "arch": ["armhf", "amd64", "i386"],
   "options": {
-    "server_ip": null,
+    [common]
+    "server_addr": null,
     "server_port": "7000",
+    
+    [dns]
     "local_port": "8123",
     "remote_port": "8123"
   },
   "schema": {
-    "server_ip": "str",
+    "server_addr": "str",
     "auth_token": "str?",
     "server_port": "str",
     "proxy_name": "str?",
