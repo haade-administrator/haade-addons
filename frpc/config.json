@@ -27,6 +27,8 @@
     "dns": {
     "local_port": "str",
     "remote_port": "str"
-    }
+    },
+    "auth_token": "str?",
+    "proxy_name": "str?"
   }
 }
