@@ -6,7 +6,7 @@
   "url": "https://github.com/fatedier/frp",
   "startup": "application",
   "boot": "auto",
-  "image": "hassmart/{arch}-addon-frp",
+  "image": "haade-administrator/{arch}-addon-frp",
   "host_network": true,
   "arch": ["armhf", "amd64", "i386"],
   "options": {
