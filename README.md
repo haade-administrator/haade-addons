@@ -15,6 +15,11 @@ Add the repository URL under **Supervisor → Add-on store → ⋮ → Manage ad
 
     https://github.com/haade-administrator/haade-addons
     
+The repository includes one add-ons for moment:
+
+frp client is a stable release that tracks the released versions of frp.
+
+    
 
 ## What is frp?
 
