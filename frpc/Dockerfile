@@ -13,7 +13,6 @@ RUN apk update \
 RUN set -x \
     && if [ $BUILD_ARCH == "armhf" ]; then FRP_ARCH="arm"; fi \
     && if [ $BUILD_ARCH == "amd64" ]; then FRP_ARCH="amd64"; fi \
-    && if [ $BUILD_ARCH == "aarch64" ]; then FRP_ARCH="aarch64"; fi \
     && if [ $BUILD_ARCH == "i386" ]; then FRP_ARCH="386"; fi \
     && URL_VERSION="https://raw.githubusercontent.com/haade-administrator/haade-addons/master/version.json" \
     && FRP_VERSION=$(curl -s $URL_VERSION | jq -e -r '.frp') \
