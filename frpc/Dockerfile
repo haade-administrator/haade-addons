@@ -1,4 +1,4 @@
-ARG BUILD_FROM
+ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:9.1.2
 FROM $BUILD_FROM
 MAINTAINER haade <administrateur@haade.fr>
 
@@ -6,7 +6,7 @@ ENV LANG C.UTF-8
 
 ARG BUILD_ARCH
 ARG FRP_VERSION=0.35.1
-ARG FRP_ARCH="arm"
+ARG FRP_ARCH="amd64"
 RUN apk update \
      && apk add --no-cache jq wget curl
 
