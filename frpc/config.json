@@ -1,6 +1,6 @@
 {
   "name": "frpc",
-  "version": "0.1.0",
+  "version": "2021.2.14",
   "slug": "frp client",
   "description": "A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.",
   "url": "https://github.com/fatedier/frp",
@@ -15,18 +15,18 @@
   },
     "web": {
     "type": "http",
-    "local_port": "8123",
+    "local_port": "80",
     "custom_domains": "www.examples.com"
   }
   },
   "schema": {
     "common": {
     "server_addr": "str",
-    "server_port": "str"
+    "server_port": "port"
     },
     "web": {
     "type": "str",
-    "local_port": "str",
+    "local_port": "port",
     "custom_domains": "str"
     }
   }
