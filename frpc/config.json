@@ -1,7 +1,7 @@
 {
-  "name": "frp",
-  "version": "0.35.1",
-  "slug": "frp",
+  "name": "frpc",
+  "version": "0.1.0",
+  "slug": "frp client",
   "description": "A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.",
   "url": "https://github.com/fatedier/frp",
   "startup": "application",
