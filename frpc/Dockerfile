@@ -2,7 +2,10 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:9.1.2
 FROM $BUILD_FROM
 MAINTAINER haade <administrateur@haade.fr>
 
-ENV LANG C.UTF-8
+ENV \
+    LANG=en_US.UTF-8 \
+    LANGUAGE=en_US:en \
+    LC_ALL=en_US.UTF-8
 
 ARG BUILD_ARCH
 ARG FRP_VERSION=0.35.1
