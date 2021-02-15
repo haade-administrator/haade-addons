@@ -7,7 +7,7 @@
   "startup": "application",
   "boot": "auto",
   "host_network": true,
-  "arch": ["armhf", "armv8", "amd64", "i386"],
+  "arch": ["armhf", "armv7", "armv8", "amd64", "i386"],
   "options": {
     "log_level": "info",
     "common": {
