@@ -12,7 +12,11 @@
     "log_level": "info",
     "common": {
     "server_addr": null,
-    "server_port": "7000"
+    "server_port": "7000",
+    "admin_addr": "127.0.0.1",
+    "admin_port": "7400",
+    "admin_user": "admin",
+    "admin_pwd": "pass"
   },
     "web": {
     "type": "http",
@@ -24,7 +28,11 @@
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
     "common": {
     "server_addr": "str",
-    "server_port": "port"
+    "server_port": "str",
+    "admin_addr": "str",
+    "admin_port": "port",
+    "admin_user": "str",
+    "admin_pwd": "str"
     },
     "web": {
     "type": "str",
