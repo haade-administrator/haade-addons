@@ -2,6 +2,9 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:9.1.2
 FROM $BUILD_FROM
 MAINTAINER haade <administrateur@haade.fr>
 
+# Set shell
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
 ENV \
     LANG=en_US.UTF-8 \
     LANGUAGE=en_US:en \
@@ -10,7 +13,8 @@ ENV \
 ARG BUILD_ARCH
 ARG FRP_VERSION=0.35.1
 ARG FRP_ARCH="amd64"
-RUN apk add --no-cache jq wget curl
+RUN apk update \
+     && apk add --no-cache jq wget curl
 
 RUN set -x \
     && if [ $BUILD_ARCH == "armhf" ]; then FRP_ARCH="arm"; fi \
