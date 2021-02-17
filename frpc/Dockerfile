@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:9.1.2
+ARG BUILD_FROM=ghcr.io/hassio-addons/base/armhf:9.1.2
 FROM $BUILD_FROM
 MAINTAINER haade <administrateur@haade.fr>
 
