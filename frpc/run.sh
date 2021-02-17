@@ -7,6 +7,10 @@ SERVER_IP=$(jq --raw-output '.server_ip' $CONFIG_PATH)
 SERVER_PORT=$(jq --raw-output '.server_port' $CONFIG_PATH)
 LOCAL_PORT=$(jq --raw-output '.local_port' $CONFIG_PATH)
 CUSTOM_DOMAINS=$(jq --raw-output '.custom_domains' $CONFIG_PATH)
+ADMIN_ADDR=$(jq --raw-output '.admin_addr' $CONFIG_PATH)
+ADMIN_PORT=$(jq --raw-output '.admin_port' $CONFIG_PATH)
+ADMIN_USER=$(jq --raw-output '.admin_user' $CONFIG_PATH)
+ADMIN_PWD=$(jq --raw-output '.admin_pwd' $CONFIG_PATH)
 
 FRP_PATH=/var/frp
 FRPC_CONF=$FRP_PATH/conf/frpc.ini
@@ -18,6 +22,10 @@ fi
 echo "[common]" >> $FRPC_CONF
 echo "server_addr = $SERVER_IP" >> $FRPC_CONF
 echo "server_port = $SERVER_PORT" >> $FRPC_CONF
+echo "admin_addr = $ADMIN_ADDR" >> $FRPC_CONF
+echo "admin_port = $ADMIN_PORT" >> $FRPC_CONF
+echo "admin_user = $ADMIN_USER" >> $FRPC_CONF
+echo "admin_pwd = $ADMIN_PWD" >> $FRPC_CONF
 
 echo "[web]" >> $FRPC_CONF
 echo "type = http" >> $FRPC_CONF
