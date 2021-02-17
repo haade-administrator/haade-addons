@@ -10,7 +10,6 @@ ENV \
 ARG BUILD_ARCH
 ARG FRP_VERSION=0.35.1
 ARG FRP_ARCH="amd64"
-RUN apk update
 RUN apk add --no-cache jq wget curl
 
 RUN set -x \
