@@ -15,7 +15,7 @@ ADMIN_USER=$(jq --raw-output '.admin_user' $CONFIG_PATH)
 ADMIN_PWD=$(jq --raw-output '.admin_pwd' $CONFIG_PATH)
 
 FRP_PATH=/var/frp
-FRPC_CONF=$FRP_PATH/frpc.ini
+FRPC_CONF=$FRP_PATH/conf/frpc.ini
 
 if [ -f $FRPC_CONF ]; then
   rm $FRPC_CONF
