@@ -13,6 +13,8 @@
     "common": {
     "server_addr": null,
     "server_port": "7000",
+    "auth_method": "token",
+    "token": "123456789",
     "admin_addr": "127.0.0.1",
     "admin_port": "7400",
     "admin_user": "admin",
@@ -29,6 +31,8 @@
     "common": {
     "server_addr": "str",
     "server_port": "str",
+    "auth_method": "str",
+    "token": "str",
     "admin_addr": "str",
     "admin_port": "port",
     "admin_user": "str",
