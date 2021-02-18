@@ -6,6 +6,10 @@
   "url": "https://github.com/fatedier/frp",
   "startup": "application",
   "boot": "auto",
+  "map": [
+  "share:rw",
+  "config:rw"
+  ],
   "host_network": true,
   "arch": ["armhf", "amd64", "i386"],
   "options": {
