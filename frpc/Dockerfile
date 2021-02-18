@@ -29,6 +29,8 @@ RUN set -x \
     && mv frp_${FRP_VERSION}_linux_${FRP_ARCH} /var/frp \
     && mkdir -p /var/frp/conf
 
+RUN chmod a+x /var/frp/frpc
+
 COPY run.sh /
 RUN chmod a+x /run.sh
 
