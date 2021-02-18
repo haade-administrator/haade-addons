@@ -22,8 +22,8 @@
   },
     "web": {
     "type": "http",
-    "local_port": "80",
-    "custom_domains": "www.examples.com"
+    "local_port": "7123",
+    "custom_domains": "tonton.haade.fr"
   }
   },
   "schema": {
