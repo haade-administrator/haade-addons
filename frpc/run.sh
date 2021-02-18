@@ -38,4 +38,6 @@ echo "custom_domains = $CUSTOM_DOMAINS" >> $FRPC_CONF
 
 echo Start frp as client
 
+exec chmod a+x /var/frp/frpc
+
 exec $FRP_PATH/frpc -c $FRPC_CONF < /dev/null
