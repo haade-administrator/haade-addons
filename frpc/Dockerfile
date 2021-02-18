@@ -2,7 +2,7 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:9.1.2
 FROM $BUILD_FROM
 
 # Copy root filesystem
-COPY rootfs /
+# COPY rootfs /
 
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
