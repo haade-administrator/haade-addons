@@ -5,7 +5,7 @@ FROM $BUILD_FROM
 # COPY rootfs /
 
 # Set shell
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+# SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 ENV \
     LANG=en_US.UTF-8 \
@@ -28,8 +28,6 @@ RUN set -x \
     && tar -zxf frp_${FRP_VERSION}_linux_${FRP_ARCH}.tar.gz \
     && mv frp_${FRP_VERSION}_linux_${FRP_ARCH} /var/frp \
     && mkdir -p /var/frp/conf
-
-RUN chmod a+x /var/frp/frpc
 
 COPY run.sh /
 RUN chmod a+x /run.sh
