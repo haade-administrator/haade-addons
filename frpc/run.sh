@@ -7,7 +7,7 @@ SERVER_ADDR=$(jq --raw-output '.server_addr' $CONFIG_PATH)
 SERVER_PORT=$(jq --raw-output '.server_port' $CONFIG_PATH)
 AUTH_METHOD=$(jq --raw-output '.authentication_method // empty' $CONFIG_PATH)
 TOKEN=$(jq --raw-output '.token // empty' $CONFIG_PATH)
-LOCAL_IP=$(jq --raw-output '.local_ip' $CONFIG_PATH)
+#LOCAL_IP=$(jq --raw-output '.local_ip' $CONFIG_PATH)
 LOCAL_PORT=$(jq --raw-output '.local_port' $CONFIG_PATH)
 CUSTOM_DOMAINS=$(jq --raw-output '.custom_domains' $CONFIG_PATH)
 ADMIN_ADDR=$(jq --raw-output '.admin_addr' $CONFIG_PATH)
@@ -40,7 +40,7 @@ echo "admin_pwd = $ADMIN_PWD" >> $FRPC_CONF
 
 echo "[$PROXY_NAME]" >> $FRPC_CONF
 echo "type = http" >> $FRPC_CONF
-echo "local_ip = $LOCAL_IP" >> $FRPC_CONF
+#echo "local_ip = $LOCAL_IP" >> $FRPC_CONF
 echo "local_port = $LOCAL_PORT" >> $FRPC_CONF
 echo "custom_domains = $CUSTOM_DOMAINS" >> $FRPC_CONF
 
