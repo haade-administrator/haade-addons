@@ -5,7 +5,7 @@ CONFIG_PATH=/data/options.json
 
 SERVER_IP=$(jq --raw-output '.server_ip' $CONFIG_PATH)
 SERVER_PORT=$(jq --raw-output '.server_port' $CONFIG_PATH)
-AUTH_METHOD=$(jq --raw-output '.auth_method // empty' $CONFIG_PATH)
+AUTH_METHOD=$(jq --raw-output '.authentication_method // empty' $CONFIG_PATH)
 TOKEN=$(jq --raw-output '.token // empty' $CONFIG_PATH)
 LOCAL_PORT=$(jq --raw-output '.local_port' $CONFIG_PATH)
 CUSTOM_DOMAINS=$(jq --raw-output '.custom_domains' $CONFIG_PATH)
@@ -24,7 +24,7 @@ fi
 echo "[common]" >> $FRPC_CONF
 echo "server_addr = $SERVER_IP" >> $FRPC_CONF
 echo "server_port = $SERVER_PORT" >> $FRPC_CONF
-echo "auth_method = $AUTH_METHOD" >> $FRPC_CONF
+echo "authentication_method = $AUTH_METHOD" >> $FRPC_CONF
 echo "token = $TOKEN" >> $FRPC_CONF
 echo "admin_addr = $ADMIN_ADDR" >> $FRPC_CONF
 echo "admin_port = $ADMIN_PORT" >> $FRPC_CONF
@@ -38,4 +38,4 @@ echo "custom_domains = $CUSTOM_DOMAINS" >> $FRPC_CONF
 
 echo Start frp as client
 
-# exec $FRP_PATH/frpc -c $FRPC_CONF < /dev/null
+exec $FRP_PATH/frpc -c $FRPC_CONF < /dev/null
