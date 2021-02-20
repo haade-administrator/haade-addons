@@ -21,7 +21,8 @@
     "type": "http",
     "local_ip": "127.0.0.1",
     "local_port": "7123",
-    "custom_domains": "www.examples.com"
+    "custom_domains": "www.examples.com",
+    "custom_domains_description": "you're personnal subdomain"
   },
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
