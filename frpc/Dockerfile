@@ -2,7 +2,7 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:9.1.2
 FROM $BUILD_FROM
 
 # Copy root filesystem
-COPY rootfs /
+# COPY rootfs /
 
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
@@ -25,7 +25,8 @@ RUN set -x \
     && FRP_VERSION=$(curl -s $URL_VERSION | jq -e -r '.frp') \
     && wget https://github.com/fatedier/frp/releases/download/v${FRP_VERSION}/frp_${FRP_VERSION}_linux_${FRP_ARCH}.tar.gz \
     && tar -zxf frp_${FRP_VERSION}_linux_${FRP_ARCH}.tar.gz \
-    && mv frp_${FRP_VERSION}_linux_${FRP_ARCH} /var/frp \
+    && mv frp_${FRP_VERSION}_linux_${FRP_ARCH} /var \
+    && mv /var/frp_${FRP_VERSION}_linux_${FRP_ARCH} /var/frp \
     && rm -rf frp_${FRP_VERSION}_linux_${FRP_ARCH}.tar.gz
 
 COPY run.sh /
