@@ -38,4 +38,4 @@ echo "custom_domains = $CUSTOM_DOMAINS" >> $FRPC_CONF
 
 echo Start frp as client
 
-exec $FRP_PATH/frpc -c $FRPC_CONF < /dev/null
+# exec $FRP_PATH/frpc -c $FRPC_CONF < /dev/null
