@@ -31,7 +31,7 @@ echo "admin_addr = $ADMIN_ADDR" >> $FRPC_CONF
 echo "admin_port = $ADMIN_PORT" >> $FRPC_CONF
 echo "admin_user = $ADMIN_USER" >> $FRPC_CONF
 echo "admin_pwd = $ADMIN_PWD" >> $FRPC_CONF
-
+echo "<br/>"
 echo "[web]" >> $FRPC_CONF
 echo "type = http" >> $FRPC_CONF
 echo "local_ip = $LOCAL_IP" >> $FRPC_CONF
