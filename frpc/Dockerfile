@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:9.1.2
+ARG BUILD_FROM=ghcr.io/hassio-addons/base/armhf:9.1.2
 FROM $BUILD_FROM
 
 # Copy root filesystem
@@ -13,7 +13,7 @@ ENV \
     LC_ALL=en_US.UTF-8
 
 ARG FRP_VERSION=0.35.1
-ARG FRP_ARCH="amd64"
+ARG FRP_ARCH="arm"
 RUN apk update \
      && apk add --no-cache jq wget curl nano
 
