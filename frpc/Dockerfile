@@ -28,7 +28,9 @@ RUN set -x \
     && mv frp_${FRP_VERSION}_linux_${FRP_ARCH} /var \
     && mv /var/frp_${FRP_VERSION}_linux_${FRP_ARCH} /var/frp \
     && rm -rf frp_${FRP_VERSION}_linux_${FRP_ARCH}.tar.gz \
-    && rm -rf /var/frp/frps frps.ini frps_full.ini
+    && cd /var/frp \
+    && rm -rf frps frps.ini frps_full.ini
+  
 
 COPY run.sh /
 RUN chmod a+x /run.sh
