@@ -26,7 +26,7 @@ RUN set -x \
     && wget https://github.com/fatedier/frp/releases/download/v${FRP_VERSION}/frp_${FRP_VERSION}_linux_${FRP_ARCH}.tar.gz \
     && tar -zxf frp_${FRP_VERSION}_linux_${FRP_ARCH}.tar.gz \
     && mv frp_${FRP_VERSION}_linux_${FRP_ARCH} /var/frp \
-    && rm -rf frp_${FRP_VERSION}_linux_${FRP_ARCH}.tar.gz
+    && rm -rf /var/frp/frp_${FRP_VERSION}_linux_${FRP_ARCH}.tar.gz
 
 COPY run.sh /
 RUN chmod a+x /run.sh
