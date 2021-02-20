@@ -15,7 +15,7 @@ ENV \
 ARG FRP_VERSION=0.35.1
 ARG FRP_ARCH="amd64"
 RUN apk update \
-     && apk add --no-cache jq wget curl
+     && apk add --no-cache jq wget curl nano
 
 RUN set -x \
     && if [ $BUILD_ARCH == "armhf" ]; then FRP_ARCH="arm"; fi \
