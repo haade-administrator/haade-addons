@@ -3,7 +3,7 @@ set -e
 
 CONFIG_PATH=/data/options.json
 
-SERVER_IP=$(jq --raw-output '.server_ip' $CONFIG_PATH)
+SERVER_ADDR=$(jq --raw-output '.server_addr' $CONFIG_PATH)
 SERVER_PORT=$(jq --raw-output '.server_port' $CONFIG_PATH)
 AUTH_METHOD=$(jq --raw-output '.authentication_method // empty' $CONFIG_PATH)
 TOKEN=$(jq --raw-output '.token // empty' $CONFIG_PATH)
@@ -22,7 +22,7 @@ if [ -f $FRPC_CONF ]; then
 fi
 
 echo "[common]" >> $FRPC_CONF
-echo "server_addr = $SERVER_IP" >> $FRPC_CONF
+echo "server_addr = $SERVER_ADDR" >> $FRPC_CONF
 echo "server_port = $SERVER_PORT" >> $FRPC_CONF
 echo "authentication_method = $AUTH_METHOD" >> $FRPC_CONF
 echo "token = $TOKEN" >> $FRPC_CONF
