@@ -6,15 +6,10 @@
   "url": "https://github.com/fatedier/frp",
   "startup": "application",
   "boot": "auto",
-  "map": [
-  "share:rw",
-  "config:rw"
-  ],
   "host_network": true,
   "arch": ["armhf", "amd64", "i386"],
   "options": {
     "log_level": "info",
-    "common": {
     "server_addr": null,
     "server_port": "7000",
     "authentication_method": "token",
@@ -22,18 +17,14 @@
     "admin_addr": "127.0.0.1",
     "admin_port": "7400",
     "admin_user": "admin",
-    "admin_pwd": "pass"
-  },
-    "web": {
+    "admin_pwd": "pass",
     "type": "http",
     "local_ip": "127.0.0.1",
     "local_port": "7123",
     "custom_domains": "www.examples.com"
-  }
   },
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
-    "common": {
     "server_addr": "str",
     "server_port": "str",
     "authentication_method": "str",
@@ -41,13 +32,10 @@
     "admin_addr": "str",
     "admin_port": "port",
     "admin_user": "str",
-    "admin_pwd": "str"
-    },
-    "web": {
+    "admin_pwd": "str",
     "type": "str",
     "local_ip": "str",
     "local_port": "port",
     "custom_domains": "str"
-    }
   }
 }
