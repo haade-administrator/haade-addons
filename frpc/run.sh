@@ -12,6 +12,11 @@ LOCAL_PORT=$(jq --raw-output '.local_port' $CONFIG_PATH)
 REMOTE_PORT=$(jq --raw-output '.remote_port' $CONFIG_PATH)
 BALANCING_GROUP=$(jq --raw-output '.balancing_group // empty' $CONFIG_PATH)
 BALANCING_GROUP_KEY=$(jq --raw-output '.balancing_group_key // empty' $CONFIG_PATH)
+HEALTH_CHECK_TYPE=$(jq --raw-output '.local_ip' $CONFIG_PATH)
+HEALTH_CHECK_URL=$(jq --raw-output '.local_ip' $CONFIG_PATH)
+HEALTH_CHECK_TIMEOUT_S=$(jq --raw-output '.local_ip' $CONFIG_PATH)
+HEALTH_CHECK_MAX_FAILED=$(jq --raw-output '.local_ip' $CONFIG_PATH)
+HEALTH_CHECK_INTERVAL_S=$(jq --raw-output '.local_ip' $CONFIG_PATH)
 ADMIN_ADDR=$(jq --raw-output '.admin_addr' $CONFIG_PATH)
 ADMIN_PORT=$(jq --raw-output '.admin_port' $CONFIG_PATH)
 ADMIN_USER=$(jq --raw-output '.admin_user' $CONFIG_PATH)
@@ -54,6 +59,11 @@ echo "local_port = $LOCAL_PORT" >> $FRPC_CONF
 echo "remote_port = $REMOTE_PORT" >> $FRPC_CONF
 echo "group = $BALANCING_GROUP" >> $FRPC_CONF
 echo "group_key = $BALANCING_GROUP_KEY" >> $FRPC_CONF
+echo "health_check_type = $HEALTH_CHECK_TYPE" >> $FRPC_CONF
+echo "health_check_url = $HEALTH_CHECK_URL" >> $FRPC_CONF
+echo "health_check_timeout_s = $HEALTH_CHECK_TIMEOUT_S" >> $FRPC_CONF
+echo "health_check_max_failed = $HEALTH_CHECK_MAX_FAILED" >> $FRPC_CONF
+echo "health_check_interval_s = $HEALTH_CHECK_INTERVAL_S" >> $FRPC_CONF
 echo "custom_domains = $CUSTOM_DOMAINS" >> $FRPC_CONF
 
 echo Start frp as client
