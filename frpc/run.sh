@@ -9,6 +9,9 @@ AUTH_METHOD=$(jq --raw-output '.authentication_method // empty' $CONFIG_PATH)
 KEY=$(jq --raw-output '.key // empty' $CONFIG_PATH)
 LOCAL_IP=$(jq --raw-output '.local_ip' $CONFIG_PATH)
 LOCAL_PORT=$(jq --raw-output '.local_port' $CONFIG_PATH)
+REMOTE_PORT=$(jq --raw-output '.remote_port' $CONFIG_PATH)
+BALANCING_GROUP=$(jq --raw-output '.balancing_group // empty' $CONFIG_PATH)
+BALANCING_GROUP_KEY=$(jq --raw-output '.balancing_group_key // empty' $CONFIG_PATH)
 ADMIN_ADDR=$(jq --raw-output '.admin_addr' $CONFIG_PATH)
 ADMIN_PORT=$(jq --raw-output '.admin_port' $CONFIG_PATH)
 ADMIN_USER=$(jq --raw-output '.admin_user' $CONFIG_PATH)
@@ -29,6 +32,11 @@ if [ ! $PROXY_NAME ]; then
   echo Using default proxy name $PROXY_NAME
 fi
 
+if [ ! $BALANCING_GROUP ]; then
+  BALANCING_GROUP=web
+  echo Using default proxy name $BALANCING_GROUP
+fi
+
 echo "[common]" >> $FRPC_CONF
 echo "server_addr = $SERVER_ADDR" >> $FRPC_CONF
 echo "server_port = $SERVER_PORT" >> $FRPC_CONF
@@ -43,6 +51,9 @@ echo "local_ip = $LOCAL_IP" >> $FRPC_CONF
 echo "[$PROXY_NAME]" >> $FRPC_CONF
 echo "type = [$FRP_TYPE]" >> $FRPC_CONF
 echo "local_port = $LOCAL_PORT" >> $FRPC_CONF
+echo "remote_port = $REMOTE_PORT" >> $FRPC_CONF
+echo "group = $BALANCING_GROUP" >> $FRPC_CONF
+echo "group_key = $BALANCING_GROUP_KEY" >> $FRPC_CONF
 echo "custom_domains = $CUSTOM_DOMAINS" >> $FRPC_CONF
 
 echo Start frp as client
