@@ -13,7 +13,7 @@
     "server_addr": null,
     "server_port": "7000",
     "authentication_method": "token",
-    "token": null,
+    "key": null,
     "type": "http",
     "local_port": "8123",
     "custom_domains": "www.examples.com"
@@ -24,7 +24,7 @@
     "server_port": "str",
     "proxy_name": "str?",
     "authentication_method": "list(token|oicd)",
-    "token": "str",
+    "key": "str",
     "type": "list(tcp|http)",
     "local_port": "port",
     "custom_domains": "str"
