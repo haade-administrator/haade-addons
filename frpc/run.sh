@@ -6,7 +6,7 @@ CONFIG_PATH=/data/options.json
 SERVER_ADDR=$(jq --raw-output '.server_addr' $CONFIG_PATH)
 SERVER_PORT=$(jq --raw-output '.server_port' $CONFIG_PATH)
 AUTH_METHOD=$(jq --raw-output '.authentication_method // empty' $CONFIG_PATH)
-TOKEN=$(jq --raw-output '.token // empty' $CONFIG_PATH)
+KEY=$(jq --raw-output '.key // empty' $CONFIG_PATH)
 LOCAL_IP=$(jq --raw-output '.local_ip' $CONFIG_PATH)
 LOCAL_PORT=$(jq --raw-output '.local_port' $CONFIG_PATH)
 ADMIN_ADDR=$(jq --raw-output '.admin_addr' $CONFIG_PATH)
@@ -33,7 +33,7 @@ echo "[common]" >> $FRPC_CONF
 echo "server_addr = $SERVER_ADDR" >> $FRPC_CONF
 echo "server_port = $SERVER_PORT" >> $FRPC_CONF
 echo "authentication_method = $AUTH_METHOD" >> $FRPC_CONF
-echo "token = $TOKEN" >> $FRPC_CONF
+echo "token = $KEY" >> $FRPC_CONF
 echo "admin_addr = $ADMIN_ADDR" >> $FRPC_CONF
 echo "admin_port = $ADMIN_PORT" >> $FRPC_CONF
 echo "admin_user = $ADMIN_USER" >> $FRPC_CONF
