@@ -13,7 +13,6 @@ ADMIN_ADDR=$(jq --raw-output '.admin_addr' $CONFIG_PATH)
 ADMIN_PORT=$(jq --raw-output '.admin_port' $CONFIG_PATH)
 ADMIN_USER=$(jq --raw-output '.admin_user' $CONFIG_PATH)
 ADMIN_PWD=$(jq --raw-output '.admin_pwd' $CONFIG_PATH)
-LOCAL_PORT=$(jq --raw-output '.local_port' $CONFIG_PATH)
 CUSTOM_DOMAINS=$(jq --raw-output '.custom_domains' $CONFIG_PATH)
 PROXY_NAME=$(jq --raw-output '.proxy_name // empty' $CONFIG_PATH)
 
