@@ -13,14 +13,13 @@
     "server_addr": null,
     "server_port": "7000",
     "authentication_method": "token",
-    "token": "123456789",
+    "token": null,
     "admin_addr": "127.0.0.1",
     "admin_port": "7400",
     "admin_user": "admin",
     "admin_pwd": "pass",
     "type": "http",
-    "local_ip": "127.0.0.1",
-    "local_port": "7123",
+    "local_port": "8123",
     "custom_domains": "www.examples.com"
   },
   "schema": {
@@ -28,14 +27,14 @@
     "server_addr": "str",
     "server_port": "str",
     "proxy_name": "str?",
-    "authentication_method": "str",
+    "authentication_method": "list(token|oidc)",
     "token": "str",
     "admin_addr": "str",
     "admin_port": "port",
     "admin_user": "str",
     "admin_pwd": "str",
     "type": "str",
-    "local_ip": "str",
+    "local_ip": "str?",
     "local_port": "port",
     "custom_domains": "str"
   }
