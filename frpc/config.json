@@ -19,10 +19,9 @@
     "admin_user": "admin",
     "admin_pwd": "pass",
     "type": "http",
-#    "local_ip": "127.0.0.1",
+    "local_ip": "127.0.0.1",
     "local_port": "7123",
-    "custom_domains": "www.examples.com",
-    "custom_domains_description": "you're personnal subdomain"
+    "custom_domains": "www.examples.com"
   },
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
@@ -36,7 +35,7 @@
     "admin_user": "str",
     "admin_pwd": "str",
     "type": "str",
-#    "local_ip": "str",
+    "local_ip": "str",
     "local_port": "port",
     "custom_domains": "str"
   }
