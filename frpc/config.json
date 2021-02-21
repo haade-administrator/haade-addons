@@ -23,9 +23,9 @@
     "server_addr": "str",
     "server_port": "str",
     "proxy_name": "str?",
-    "authentication_method": "str",
+    "authentication_method": "list(token|oicd)",
     "token": "str",
-    "type": "str",
+    "type": "list(tcp|http)",
     "local_port": "port",
     "custom_domains": "str"
   }
