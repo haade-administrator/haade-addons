@@ -27,7 +27,7 @@
     "server_addr": "str",
     "server_port": "str",
     "proxy_name": "str?",
-    "authentication_method": "list(token|oidc)",
+    "authentication_method": "token",
     "token": "str",
     "admin_addr": "str",
     "admin_port": "port",
