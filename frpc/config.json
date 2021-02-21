@@ -21,11 +21,11 @@
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
     "server_addr": "str",
-    "server_port": "str",
+    "server_port": "port",
     "proxy_name": "str?",
     "authentication_method": "list(token|oicd)",
     "key": "str",
-    "type": "list(tcp|http)",
+    "type": "list(tcp|http|https)",
     "local_port": "port",
     "custom_domains": "str"
   }
