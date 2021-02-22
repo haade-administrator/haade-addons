@@ -54,7 +54,7 @@ echo "admin_pwd = $ADMIN_PWD" >> $FRPC_CONF
 echo "local_ip = $LOCAL_IP" >> $FRPC_CONF
 
 echo "[$PROXY_NAME]" >> $FRPC_CONF
-echo "type = [$FRP_TYPE]" >> $FRPC_CONF
+echo "type = $FRP_TYPE" >> $FRPC_CONF
 echo "local_port = $LOCAL_PORT" >> $FRPC_CONF
 echo "remote_port = $REMOTE_PORT" >> $FRPC_CONF
 echo "group = $BALANCING_GROUP" >> $FRPC_CONF
