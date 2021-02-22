@@ -5,8 +5,7 @@ CONFIG_PATH=/data/options.json
 
 SERVER_ADDR=$(jq --raw-output '.server_addr' $CONFIG_PATH)
 SERVER_PORT=$(jq --raw-output '.server_port' $CONFIG_PATH)
-AUTH_METHOD=$(jq --raw-output '.authentication_method // empty' $CONFIG_PATH)
-KEY=$(jq --raw-output '.key // empty' $CONFIG_PATH)
+TOKEN_KEY=$(jq --raw-output '.token_key // empty' $CONFIG_PATH)
 LOCAL_PORT=$(jq --raw-output '.local_port' $CONFIG_PATH)
 BALANCING_GROUP=$(jq --raw-output '.balancing_group // empty' $CONFIG_PATH)
 BALANCING_GROUP_KEY=$(jq --raw-output '.balancing_group_key // empty' $CONFIG_PATH)
@@ -43,8 +42,8 @@ fi
 echo "[common]" >> $FRPC_CONF
 echo "server_addr = $SERVER_ADDR" >> $FRPC_CONF
 echo "server_port = $SERVER_PORT" >> $FRPC_CONF
-echo "authentication_method = $AUTH_METHOD" >> $FRPC_CONF
-echo "token = $KEY" >> $FRPC_CONF
+echo "authentication_method = token" >> $FRPC_CONF
+echo "token = $TOKEN_KEY" >> $FRPC_CONF
 
 echo "[$HTTP_NAME]" >> $FRPC_CONF
 echo "type = $FRP_TYPE" >> $FRPC_CONF
