@@ -12,7 +12,7 @@
     "log_level": "info",
     "server_addr": null,
     "server_port": "7000",
-    "key": null,
+    "token_key": null,
     "type": "http",
     "local_port": "8123",
     "custom_domains": "www.examples.com"
@@ -22,7 +22,7 @@
     "server_addr": "str",
     "server_port": "port",
     "http_name": "str?",
-    "key": "str",
+    "token_key": "str",
     "type": "list(http|https)",
     "local_port": "port",
     "custom_domains": "str"
