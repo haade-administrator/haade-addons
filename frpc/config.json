@@ -12,7 +12,6 @@
     "log_level": "info",
     "server_addr": null,
     "server_port": "7000",
-    "authentication_method": "token",
     "key": null,
     "type": "http",
     "local_port": "8123",
@@ -22,10 +21,9 @@
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
     "server_addr": "str",
     "server_port": "port",
-    "proxy_name": "str?",
-    "authentication_method": "list(token|oicd)",
+    "http_name": "str?",
     "key": "str",
-    "type": "list(tcp|http|https)",
+    "type": "list(http|https)",
     "local_port": "port",
     "custom_domains": "str"
   }
