@@ -13,7 +13,7 @@ With frpc it is now easy to connect from the outside without touching various pa
 for http service:
 
 ```yaml
-server_addr: ( ip of vps )
+server_addr: // ip of vps
 server_port: ( by default 7000 )
 http_name: ( name of you're connection http )
 token_key: ( key_token )
