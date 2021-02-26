@@ -1,8 +1,6 @@
 ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:9.1.2
 FROM $BUILD_FROM
 
-# Copy root filesystem
-# COPY rootfs /
 
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
@@ -34,7 +32,9 @@ RUN set -x \
     && rm -rf frp_${FRP_VERSION}_linux_${ARCH}.tar.gz \
     && cd /var/frp \
     && rm -rf frps frps.ini frps_full.ini
-  
+
+# Copy root filesystem
+# COPY rootfs /  
 
 COPY run.sh /
 RUN chmod a+x /run.sh
