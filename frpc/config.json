@@ -16,10 +16,6 @@
     "type": "http",
     "local_port": "8123",
     "balancing_group_key": "123",
-    "health_check_type": "http",
-    "health_check_timeout_s": "3",
-    "health_check_max_failed": "3",
-    "health_check_interval_s": "10",
     "proxy_protocol_version": "v2",
     "custom_domains": "www.examples.com"
   },
@@ -34,10 +30,6 @@
     "local_port": "port",
     "balancing_group": "str?",
     "balancing_group_key": "str",
-    "health_check_type": "str",
-    "health_check_timeout_s": "str",
-    "health_check_max_failed": "str",
-    "health_check_interval_s": "str",
     "proxy_protocol_version": "list(v1|v2)",
     "custom_domains": "str"
   }
