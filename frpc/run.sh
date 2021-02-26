@@ -49,11 +49,11 @@ echo "local_port = $LOCAL_PORT" >> $FRPC_CONF
 echo "proxy_protocol_version = $PROXY_PROTOCOL_VERSION" >> FRPC_CONF
 echo "group = $BALANCING_GROUP" >> $FRPC_CONF
 echo "group_key = $BALANCING_GROUP_KEY" >> $FRPC_CONF
-echo "health_check_type = $HEALTH_CHECK_TYPE" >> $FRPC_CONF
-echo "health_check_url = /status" >> $FRPC_CONF
-echo "health_check_timeout_s = $HEALTH_CHECK_TIMEOUT_S" >> $FRPC_CONF
-echo "health_check_max_failed = $HEALTH_CHECK_MAX_FAILED" >> $FRPC_CONF
-echo "health_check_interval_s = $HEALTH_CHECK_INTERVAL_S" >> $FRPC_CONF
+# echo "health_check_type = $HEALTH_CHECK_TYPE" >> $FRPC_CONF
+# echo "health_check_url = /status" >> $FRPC_CONF
+# echo "health_check_timeout_s = $HEALTH_CHECK_TIMEOUT_S" >> $FRPC_CONF
+# echo "health_check_max_failed = $HEALTH_CHECK_MAX_FAILED" >> $FRPC_CONF
+# echo "health_check_interval_s = $HEALTH_CHECK_INTERVAL_S" >> $FRPC_CONF
 echo "custom_domains = $CUSTOM_DOMAINS" >> $FRPC_CONF
 
 echo Start frp as client
