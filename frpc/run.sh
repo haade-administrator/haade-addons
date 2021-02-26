@@ -6,6 +6,7 @@ CONFIG_PATH=/data/options.json
 SERVER_ADDR=$(jq --raw-output '.server_addr' $CONFIG_PATH)
 SERVER_PORT=$(jq --raw-output '.server_port' $CONFIG_PATH)
 TOKEN_KEY=$(jq --raw-output '.token_key // empty' $CONFIG_PATH)
+LOCAL_IP=$(jq --raw-output '.local_ip' $CONFIG_PATH)
 LOCAL_PORT=$(jq --raw-output '.local_port' $CONFIG_PATH)
 BALANCING_GROUP=$(jq --raw-output '.balancing_group // empty' $CONFIG_PATH)
 BALANCING_GROUP_KEY=$(jq --raw-output '.balancing_group_key // empty' $CONFIG_PATH)
@@ -43,6 +44,7 @@ echo "token = $TOKEN_KEY" >> $FRPC_CONF
 
 echo "[$HTTP_NAME]" >> $FRPC_CONF
 echo "type = $FRP_TYPE" >> $FRPC_CONF
+echo "local_ip = $LOCAL_IP" >> $FRPC_CONF
 echo "local_port = $LOCAL_PORT" >> $FRPC_CONF
 echo "proxy_protocol_version = $PROXY_PROTOCOL_VERSION" >> FRPC_CONF
 echo "group = $BALANCING_GROUP" >> $FRPC_CONF
