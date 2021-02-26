@@ -36,7 +36,7 @@
     "// health_check_type": "list(http|https)",
     "// health_check_timeout_s": "str",
     "// health_check_max_failed": "str",
-    "//health_check_interval_s": "str",
+    "// health_check_interval_s": "str",
     "custom_domains": "str"
   }
 }
