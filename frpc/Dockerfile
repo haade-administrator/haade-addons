@@ -21,8 +21,7 @@ RUN apk update \
 RUN set -x \
     && ARCH="${BUILD_ARCH}" \
     && if [ "${BUILD_ARCH}" = "armhf" ]; then ARCH="arm"; fi \
-    && if [ "${BUILD_ARCH}" = "amd64" ]; then ARCH="amd64"; fi \
-    && if [ "${BUILD_ARCH}" = "i386" ]; then ARCH="i386"; fi \
+    && if [ "${BUILD_ARCH}" = "armv7" ]; then ARCH="arm"; fi \
     && URL_VERSION="https://raw.githubusercontent.com/haade-administrator/haade-addons/master/version.json" \
     && FRP_VERSION=$(curl -s $URL_VERSION | jq -e -r '.frp') \
     && wget https://github.com/fatedier/frp/releases/download/v${FRP_VERSION}/frp_${FRP_VERSION}_linux_${ARCH}.tar.gz \
