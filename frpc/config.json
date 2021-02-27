@@ -18,7 +18,6 @@
     "use_encryption": "false",
     "use_compression": "true",
     "balancing_group_key": "123",
-    "proxy_protocol_version": "v2",
     "custom_domains": "www.examples.com"
   },
   "schema": {
@@ -34,7 +33,6 @@
     "use_compression": "list(false|true)",
     "balancing_group": "str?",
     "balancing_group_key": "str",
-    "proxy_protocol_version": "list(v1|v2)",
     "custom_domains": "str"
   }
 }
