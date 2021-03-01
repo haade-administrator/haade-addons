@@ -26,7 +26,7 @@
     "server_port": "port",
     "http_name": "str?",
     "token_key": "str",
-    "type": "str",
+    "type": "list(http|https)",
     "local_ip": "str?",
     "local_port": "port",
     "use_encryption": "list(false|true)",
