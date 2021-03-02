@@ -16,7 +16,7 @@ ENV \
 ARG FRP_VERSION=0.35.1
 
 RUN apk update \
-     && apk add --no-cache jq wget curl nano
+     && apk add --no-cache openssl jq wget curl nano
 
 RUN set -x \
     && ARCH="${BUILD_ARCH}" \
