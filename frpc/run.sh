@@ -50,7 +50,6 @@ echo "local_ip = $LOCAL_IP" >> $FRPC_CONF
 echo "local_port = $LOCAL_PORT" >> $FRPC_CONF
 echo "use_encryption = $USE_ENCRYPTION" >> $FRPC_CONF
 echo "use_compression = $USE_COMPRESSION" >> $FRPC_CONF
-echo "local_port = $LOCAL_PORT" >> $FRPC_CONF
 # echo "proxy_protocol_version = $PROXY_PROTOCOL_VERSION" >> $FRPC_CONF
 echo "group = $BALANCING_GROUP" >> $FRPC_CONF
 echo "group_key = $BALANCING_GROUP_KEY" >> $FRPC_CONF
