@@ -30,12 +30,12 @@ fi
 
 if [ ! $HTTP_NAME ]; then
   HTTP_NAME=web
-  echo Using default proxy name $HTTP_NAME
+  echo Using default http name $HTTP_NAME
 fi
 
 if [ ! $BALANCING_GROUP ]; then
   BALANCING_GROUP=web
-  echo Using default proxy name $BALANCING_GROUP
+  echo Using default balancing group name $BALANCING_GROUP
 fi
 
 echo "[common]" >> $FRPC_CONF
@@ -59,6 +59,8 @@ echo "group_key = $BALANCING_GROUP_KEY" >> $FRPC_CONF
 # echo "health_check_max_failed = $HEALTH_CHECK_MAX_FAILED" >> $FRPC_CONF
 # echo "health_check_interval_s = $HEALTH_CHECK_INTERVAL_S" >> $FRPC_CONF
 echo "custom_domains = $CUSTOM_DOMAINS" >> $FRPC_CONF
+
+echo "[https2http]" >> $FRPC_CONF
 
 echo Start frp as client
 
