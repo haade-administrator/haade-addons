@@ -5,6 +5,7 @@ CONFIG_PATH=/data/options.json
 
 SERVER_ADDR=$(jq --raw-output '.server_addr' $CONFIG_PATH)
 SERVER_PORT=$(jq --raw-output '.server_port' $CONFIG_PATH)
+FRP_TYPE=$(jq --raw-output '.frp_type' $CONFIG_PATH)
 TOKEN_KEY=$(jq --raw-output '.token_key // empty' $CONFIG_PATH)
 LOCAL_IP=$(jq --raw-output '.local_ip' $CONFIG_PATH)
 LOCAL_PORT=$(jq --raw-output '.local_port' $CONFIG_PATH)
@@ -19,7 +20,7 @@ HEALTH_CHECK_MAX_FAILED=$(jq --raw-output '.health_check_max_failed' $CONFIG_PAT
 HEALTH_CHECK_INTERVAL_S=$(jq --raw-output '.health_check_interval_s' $CONFIG_PATH)
 CUSTOM_DOMAINS=$(jq --raw-output '.custom_domains' $CONFIG_PATH)
 SSL_CUSTOM_DOMAINS=$(jq --raw-output '.ssl_custom_domains' $CONFIG_PATH)
-CUSTOM_NAME=$(jq --raw-output '.http_name // empty' $CONFIG_PATH)
+CUSTOM_NAME=$(jq --raw-output '.custom_name' $CONFIG_PATH)
 SSL_LOCAL_ADDR=$(jq --raw-output '.ssl_local_addr' $CONFIG_PATH)
 SERVER_CRT=$(jq --raw-output '.server_crt' $CONFIG_PATH)
 SERVER_KEY=$(jq --raw-output '.server_key' $CONFIG_PATH)
