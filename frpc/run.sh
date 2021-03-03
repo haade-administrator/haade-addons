@@ -64,7 +64,7 @@ echo "group_key = $BALANCING_GROUP_KEY" >> $FRPC_CONF
 # echo "health_check_interval_s = $HEALTH_CHECK_INTERVAL_S" >> $FRPC_CONF
 echo "custom_domains = $CUSTOM_DOMAINS" >> $FRPC_CONF
 
-elif [ "FRP_TYPE" = "https" ]; then
+elif [ "$FRP_TYPE" = "https" ]; then
 echo "[common]" >> $FRPC_CONF
 echo "server_addr = $SERVER_ADDR" >> $FRPC_CONF
 echo "server_port = $SERVER_PORT" >> $FRPC_CONF
