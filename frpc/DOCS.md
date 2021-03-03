@@ -23,7 +23,7 @@ balancing_group: // load balancing for optimize
 balancing_group_key: // key of secure balancing_group
 custom_domains: // setting you're domains
 ```
-for https service
+for https service with certbot
 
 ```yaml
 server_addr: // ip of vps
