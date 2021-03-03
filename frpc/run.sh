@@ -1,8 +1,6 @@
 #!/bin/bash
 set -e
 
-sed ‘/[$CUSTOM_NAME]/{x;p;x;}’
-
 CONFIG_PATH=/data/options.json
 
 SERVER_ADDR=$(jq --raw-output '.server_addr' $CONFIG_PATH)
