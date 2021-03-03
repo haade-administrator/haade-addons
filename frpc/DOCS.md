@@ -15,14 +15,29 @@ for http service:
 ```yaml
 server_addr: // ip of vps
 server_port: // by default 7000
-http_name: // name of you're connection http
+custom_name: // name of you're connection http
 token_key: // key token
-type: // http or https
+type: // http
 local_port: // by default 8123
 balancing_group: // load balancing for optimize
 balancing_group_key: // key of secure balancing_group
 custom_domains: // setting you're domains
 ```
+for https service
+
+```yaml
+server_addr: // ip of vps
+server_port: // by default 7000
+custom_name: // name of you're connection http
+token_key: // key token
+type: // https
+local_ip: // 127.0.0.1:8123
+local_port: // by default 8123
+balancing_group: // load balancing for optimize
+balancing_group_key: // key of secure balancing_group
+custom_domains: // setting you're domains
+```
+
 ### Option: `type`
 
 - `tcp`: partially adapted
