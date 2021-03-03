@@ -8,6 +8,7 @@ SERVER_PORT=$(jq --raw-output '.server_port' $CONFIG_PATH)
 TOKEN_KEY=$(jq --raw-output '.token_key // empty' $CONFIG_PATH)
 LOCAL_IP=$(jq --raw-output '.local_ip' $CONFIG_PATH)
 LOCAL_PORT=$(jq --raw-output '.local_port' $CONFIG_PATH)
+SSL_LOCAL_PORT=$(jq --raw-output '.ssl_local_port' $CONFIG_PATH)
 USE_ENCRYPTION=$(jq --raw-output '.use_encryption' $CONFIG_PATH)
 USE_COMPRESSION=$(jq --raw-output '.use_compression' $CONFIG_PATH)
 BALANCING_GROUP=$(jq --raw-output '.balancing_group // empty' $CONFIG_PATH)
@@ -65,7 +66,7 @@ echo "custom_domains = $CUSTOM_DOMAINS" >> $FRPC_CONF
 
 echo "[$HTTPS_NAME]" >> $FRPC_CONF
 echo "type = https" >> $FRPC_CONF
-echo "local_port = 8123" >> $FRPC_CONF
+echo "local_port = $SSL_LOCAL_PORT" >> $FRPC_CONF
 echo "custom_domains = $SSL_CUSTOM_DOMAINS" >> $FRPC_CONF
 echo "plugin = https2http" >> $FRPC_CONF
 echo "plugin_local_addr = 127.0.0.1:8123" >> $FRPC_CONF
