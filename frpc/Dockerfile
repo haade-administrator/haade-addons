@@ -18,10 +18,6 @@ RUN apk update \
      && apk add --no-cache openssl jq wget curl nano
 
 RUN set -x \
-    && git rm -r --cached .
-    && git add .
-    && git commit -m 'git cache cleared'
-    && git push
     && ARCH="${BUILD_ARCH}" \
     && if [ "${BUILD_ARCH}" = "armhf" ]; then ARCH="arm"; fi \
     && if [ "${BUILD_ARCH}" = "armv7" ]; then ARCH="arm"; fi \
