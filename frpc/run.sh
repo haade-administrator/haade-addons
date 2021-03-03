@@ -61,6 +61,15 @@ echo "group_key = $BALANCING_GROUP_KEY" >> $FRPC_CONF
 echo "custom_domains = $CUSTOM_DOMAINS" >> $FRPC_CONF
 
 echo "[https2http]" >> $FRPC_CONF
+echo "type = https" >> $FRPC_CONF
+echo "local_port = 8123" >> $FRPC_CONF
+echo "custom_domains = nico.eu.domoxy.ovh" >> $FRPC_CONF
+echo "plugin = https2http" >> $FRPC_CONF
+echo "plugin_local_addr = 127.0.0.1:8123" >> $FRPC_CONF
+echo "plugin_crt_path = ./cert.pem" >> $FRPC_CONF
+echo "plugin_key_path = ./privkey.pem" >> $FRPC_CONF
+echo "plugin_host_header_rewrite = 127.0.0.1" >> $FRPC_CONF
+echo "plugin_header_X-From-Where = frp" >> $FRPC_CONF
 
 echo Start frp as client
 
