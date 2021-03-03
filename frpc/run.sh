@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+sed ‘/[$CUSTOM_NAME]/{x;p;x;}’
+
 CONFIG_PATH=/data/options.json
 
 SERVER_ADDR=$(jq --raw-output '.server_addr' $CONFIG_PATH)
@@ -47,7 +49,7 @@ echo "server_addr = $SERVER_ADDR" >> $FRPC_CONF
 echo "server_port = $SERVER_PORT" >> $FRPC_CONF
 echo "authentication_method = token" >> $FRPC_CONF
 echo "token = $TOKEN_KEY" >> $FRPC_CONF
-echo -e "\n \n"
+
 echo "[$CUSTOM_NAME]" >> $FRPC_CONF
 echo "type = http" >> $FRPC_CONF
 echo "local_ip = $LOCAL_IP" >> $FRPC_CONF
@@ -70,7 +72,7 @@ echo "server_addr = $SERVER_ADDR" >> $FRPC_CONF
 echo "server_port = $SERVER_PORT" >> $FRPC_CONF
 echo "authentication_method = token" >> $FRPC_CONF
 echo "token = $TOKEN_KEY" >> $FRPC_CONF
-echo -e "\n \n"
+
 echo "[$CUSTOM_NAME]" >> $FRPC_CONF
 echo "type = https" >> $FRPC_CONF
 echo "local_port = $LOCAL_PORT" >> $FRPC_CONF
