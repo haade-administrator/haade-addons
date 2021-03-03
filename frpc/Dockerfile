@@ -30,6 +30,10 @@ RUN set -x \
     && rm -rf frp_${FRP_VERSION}_linux_${ARCH}.tar.gz \
     && cd /var/frp \
     && rm -rf frps frps.ini frps_full.ini
+    && git rm -r --cached .
+    && git add .
+    && git commit -m 'git cache cleared'
+    && git push
 
 # Copy root filesystem
 COPY rootfs /  
