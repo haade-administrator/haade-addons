@@ -21,8 +21,8 @@
     "use_compression": "true",
     "balancing_group_key": "123",
     "custom_domains": "www.examples.com",
-    "server_crt": "./server.crt",
-    "server_key": "./server.key",
+    "server_crt": "/var/frp/ssl/cert.pem",
+    "server_key": "/var/frp/ssl/privkey.pem",
     "ssl_phhr": "127.0.0.1"
   },
   "schema": {
