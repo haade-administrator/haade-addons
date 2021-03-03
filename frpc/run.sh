@@ -19,7 +19,7 @@ HEALTH_CHECK_INTERVAL_S=$(jq --raw-output '.health_check_interval_s' $CONFIG_PAT
 CUSTOM_DOMAINS=$(jq --raw-output '.custom_domains' $CONFIG_PATH)
 HTTP_NAME=$(jq --raw-output '.http_name // empty' $CONFIG_PATH)
 FRP_TYPE=$(jq --raw-output '.type' $CONFIG_PATH)
-SERVER_CRT=$(jq --raw-output '.serverycrt' $CONFIG_PATH)
+SERVER_CRT=$(jq --raw-output '.server_crt' $CONFIG_PATH)
 SERVER_KEY=$(jq --raw-output '.server_key' $CONFIG_PATH)
 PROXY_PROTOCOL_VERSION=$(jq --raw-output '.proxy_protocol_version' $CONFIG_PATH)
 
