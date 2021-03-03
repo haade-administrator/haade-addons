@@ -32,7 +32,7 @@
     "frp_type": "list(http|https)",
     "custom_name": "str",
     "token_key": "str",
-    "local_ip": "str",
+    "local_ip": "str?",
     "local_port": "port",
     "use_encryption": "list(false|true)",
     "use_compression": "list(false|true)",
