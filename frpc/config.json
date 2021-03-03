@@ -24,7 +24,8 @@
     "ssl_custom_domains": "www.examples.com",
     "ssl_local_addr": "127.0.0.1:8123",
     "server_crt": "./server.crt",
-    "server_key": "./server.key"
+    "server_key": "./server.key",
+    "ssl_phhr": "127.0.0.1"
   },
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
@@ -44,6 +45,7 @@
     "ssl_custom_domains": "str",
     "ssl_local_addr": "str",
     "server_crt": "str",
-    "server_key": "str"
+    "server_key": "str",
+    "ssl_phhr": "str"
   }
 }
