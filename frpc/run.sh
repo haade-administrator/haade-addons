@@ -31,9 +31,9 @@ if [ -f $FRPC_CONF ]; then
   rm $FRPC_CONF
 fi
 
-if [ ! $HTTP_NAME ]; then
-  HTTP_NAME=web
-  echo Using default http name $HTTP_NAME
+if [ ! $CUSTOM_NAME ]; then
+  CUSTOM_NAME=web
+  echo Using default http name $CUSTOM_NAME
 fi
 
 if [ ! $BALANCING_GROUP ]; then
