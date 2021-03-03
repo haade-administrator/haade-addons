@@ -19,8 +19,7 @@ HEALTH_CHECK_MAX_FAILED=$(jq --raw-output '.health_check_max_failed' $CONFIG_PAT
 HEALTH_CHECK_INTERVAL_S=$(jq --raw-output '.health_check_interval_s' $CONFIG_PATH)
 CUSTOM_DOMAINS=$(jq --raw-output '.custom_domains' $CONFIG_PATH)
 SSL_CUSTOM_DOMAINS=$(jq --raw-output '.ssl_custom_domains' $CONFIG_PATH)
-HTTP_NAME=$(jq --raw-output '.http_name // empty' $CONFIG_PATH)
-HTTPS_NAME=$(jq --raw-output '.https_name // empty' $CONFIG_PATH)
+CUSTOM_NAME=$(jq --raw-output '.http_name // empty' $CONFIG_PATH)
 SSL_LOCAL_ADDR=$(jq --raw-output '.ssl_local_addr' $CONFIG_PATH)
 SERVER_CRT=$(jq --raw-output '.server_crt' $CONFIG_PATH)
 SERVER_KEY=$(jq --raw-output '.server_key' $CONFIG_PATH)
@@ -44,13 +43,14 @@ if [ ! $BALANCING_GROUP ]; then
   echo Using default balancing group name $BALANCING_GROUP
 fi
 
+if [ "$FRP_TYPE" = "http" ]; then
 echo "[common]" >> $FRPC_CONF
 echo "server_addr = $SERVER_ADDR" >> $FRPC_CONF
 echo "server_port = $SERVER_PORT" >> $FRPC_CONF
 echo "authentication_method = token" >> $FRPC_CONF
 echo "token = $TOKEN_KEY" >> $FRPC_CONF
-\
-echo "[$HTTP_NAME]" >> $FRPC_CONF
+
+echo "[$CUSTOM_NAME]" >> $FRPC_CONF
 echo "type = http" >> $FRPC_CONF
 echo "local_ip = $LOCAL_IP" >> $FRPC_CONF
 echo "local_port = $LOCAL_PORT" >> $FRPC_CONF
@@ -66,7 +66,15 @@ echo "group_key = $BALANCING_GROUP_KEY" >> $FRPC_CONF
 # echo "health_check_interval_s = $HEALTH_CHECK_INTERVAL_S" >> $FRPC_CONF
 echo "custom_domains = $CUSTOM_DOMAINS" >> $FRPC_CONF
 
-echo "[$HTTPS_NAME]" >> $FRPC_CONF
+elif [ "FRP_TYPE" = "https" ]; then
+echo "[common]" >> $FRPC_CONF
+echo "server_addr = $SERVER_ADDR" >> $FRPC_CONF
+echo "server_port = $SERVER_PORT" >> $FRPC_CONF
+echo "authentication_method = token" >> $FRPC_CONF
+echo "token = $TOKEN_KEY" >> $FRPC_CONF
+
+
+echo "[$CUSTOM_NAME]" >> $FRPC_CONF
 echo "type = https" >> $FRPC_CONF
 echo "local_port = $SSL_LOCAL_PORT" >> $FRPC_CONF
 echo "custom_domains = $SSL_CUSTOM_DOMAINS" >> $FRPC_CONF
@@ -76,6 +84,8 @@ echo "plugin_crt_path = $SERVER_CRT" >> $FRPC_CONF
 echo "plugin_key_path = $SERVER_KEY" >> $FRPC_CONF
 echo "plugin_host_header_rewrite = $SSL_PHHR" >> $FRPC_CONF
 echo "plugin_header_X-From-Where = frp" >> $FRPC_CONF
+
+fi
 
 echo Start frp as client
 
