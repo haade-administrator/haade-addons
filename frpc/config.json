@@ -20,6 +20,7 @@
     "balancing_group_key": "123",
     "custom_domains": "www.examples.com",
     "https_name": "my-network-ssl-name",
+    "ssl_custom_domains": "www.examples.com",
     "server_crt": "./server.crt",
     "server_key": "./server.key"
   },
@@ -37,6 +38,7 @@
     "balancing_group_key": "str",
     "custom_domains": "str",
     "https_name": "str",
+    "ssl_custom_domains": "str",
     "server_crt": "str",
     "server_key": "str"
   }
