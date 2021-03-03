@@ -22,6 +22,7 @@
     "https_name": "my-network-ssl-name",
     "ssl_local_port": "8123",
     "ssl_custom_domains": "www.examples.com",
+    "ssl_local_addr": "127.0.0.1:8123",
     "server_crt": "./server.crt",
     "server_key": "./server.key"
   },
@@ -41,6 +42,7 @@
     "https_name": "str",
     "ssl_local_port": "port",
     "ssl_custom_domains": "str",
+    "ssl_local_addr": "str",
     "server_crt": "str",
     "server_key": "str"
   }
