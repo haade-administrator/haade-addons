@@ -74,11 +74,11 @@ echo "token = $TOKEN_KEY" >> $FRPC_CONF
 echo "[$CUSTOM_NAME]" >> $FRPC_CONF
 echo "type = https" >> $FRPC_CONF
 echo "local_port = $LOCAL_PORT" >> $FRPC_CONF
-echo "use_encryption = $USE_ENCRYPTION" >> $FRPC_CONF
-echo "use_compression = $USE_COMPRESSION" >> $FRPC_CONF
+# echo "use_encryption = $USE_ENCRYPTION" >> $FRPC_CONF
+# echo "use_compression = $USE_COMPRESSION" >> $FRPC_CONF
 echo "custom_domains = $CUSTOM_DOMAINS" >> $FRPC_CONF
-echo "group = $BALANCING_GROUP" >> $FRPC_CONF
-echo "group_key = $BALANCING_GROUP_KEY" >> $FRPC_CONF
+# echo "group = $BALANCING_GROUP" >> $FRPC_CONF
+# echo "group_key = $BALANCING_GROUP_KEY" >> $FRPC_CONF
 echo "plugin = https2http" >> $FRPC_CONF
 echo "plugin_local_addr = $LOCAL_IP" >> $FRPC_CONF
 echo "plugin_crt_path = $SERVER_CRT" >> $FRPC_CONF
