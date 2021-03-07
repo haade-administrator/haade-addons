@@ -8,6 +8,14 @@
   "boot": "auto",
   "host_network": true,
   "arch": ["armhf", "amd64", "i386"],
+  "map": [
+    "config:rw",
+    "ssl:rw",
+    "addons:rw",
+    "media:rw",
+    "share:rw",
+    "backup:rw"
+  ],
   "options": {
     "log_level": "info",
     "server_addr": null,
