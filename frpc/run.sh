@@ -22,7 +22,7 @@ CUSTOM_NAME=$(jq --raw-output '.custom_name' $CONFIG_PATH)
 SERVER_CRT=$(jq --raw-output '.server_crt' $CONFIG_PATH)
 SERVER_KEY=$(jq --raw-output '.server_key' $CONFIG_PATH)
 SSL_PHHR=$(jq --raw-output '.ssl_phhr' $CONFIG_PATH)
-PROXY_PROTOCOL_VERSION=$(jq --raw-output '.proxy_protocol_version' $CONFIG_PATH)
+PROXY_PROTOCOL_VERSION=$(jq --raw-output '.proxy_protocol_version // empty' $CONFIG_PATH)
 
 FRP_PATH=/var/frp
 FRP_PATH_SSL=$FRP_PATH/ssl
