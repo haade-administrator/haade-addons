@@ -25,7 +25,10 @@ SSL_PHHR=$(jq --raw-output '.ssl_phhr' $CONFIG_PATH)
 PROXY_PROTOCOL_VERSION=$(jq --raw-output '.proxy_protocol_version' $CONFIG_PATH)
 
 FRP_PATH=/var/frp
+FRP_PATH_SSL=$FRP_PATH/ssl
 FRPC_CONF=$FRP_PATH/frpc.ini
+FRPC_CONF_CERT=$FRP_PATH_SSL/cert.pem
+FRPC_CONF_KEY=$FRP_PATH_SSL/privkey.pem
 
 if [ -f $FRPC_CONF ]; then
   rm $FRPC_CONF
@@ -85,7 +88,6 @@ echo "plugin_crt_path = $SERVER_CRT" >> $FRPC_CONF
 echo "plugin_key_path = $SERVER_KEY" >> $FRPC_CONF
 echo "plugin_host_header_rewrite = $SSL_PHHR" >> $FRPC_CONF
 echo "plugin_header_X-From-Where = frp" >> $FRPC_CONF
-
 fi
 
 echo Start frp as client
