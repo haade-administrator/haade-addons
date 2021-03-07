@@ -46,7 +46,6 @@
     "custom_domains": "str",
     "server_crt": "str?",
     "server_key": "str?",
-    "ssl_phhr": "str",
-    "proxy_protocol_version": "str?"
+    "ssl_phhr": "str"
   }
 }
