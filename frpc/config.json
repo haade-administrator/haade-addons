@@ -44,8 +44,8 @@
     "balancing_group": "str?",
     "balancing_group_key": "str?",
     "custom_domains": "str",
-    "server_crt": "password",
-    "server_key": "password",
+    "server_crt": "str?",
+    "server_key": "str?",
     "ssl_phhr": "str"
   }
 }
