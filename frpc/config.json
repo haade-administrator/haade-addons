@@ -28,7 +28,7 @@
     "use_encryption": "false",
     "use_compression": "true",
     "custom_domains": "www.examples.com",
-    "server_crt": "/var/frp/ssl/cert.pem",
+    "server_crt": "/var/frp/ssl/fullchain.pem",
     "server_key": "/var/frp/ssl/privkey.pem",
     "ssl_phhr": "127.0.0.1"
   },
