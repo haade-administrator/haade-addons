@@ -91,10 +91,6 @@ echo "plugin_header_X-From-Where = frp" >> $FRPC_CONF
 echo "proxy_protocol_version = $PROXY_PROTOCOL_VERSION" >> $FRPC_CONF
 fi
 
-chmod 600 /ssl/fullchain.pem
-chmod 600 /ssl/privkey.pem
-
-
 echo Start frp as client
 
 exec $FRP_PATH/frpc -c $FRPC_CONF < /dev/null
