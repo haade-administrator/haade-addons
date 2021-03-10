@@ -27,8 +27,8 @@ PROXY_PROTOCOL_VERSION=$(jq --raw-output '.proxy_protocol_version // empty' $CON
 FRP_PATH=/var/frp
 FRPC_CONF=$FRP_PATH/frpc.ini
 FRP_PATH_SSL=$FRP_PATH/ssl
-FRPC_CONF_CERT=/ssl/fullchain.pem
-FRPC_CONF_KEY=/ssl/privkey.pem
+FRPC_CONF_CERT=$FRP_PATH_SSL/fullchain.pem
+FRPC_CONF_KEY=$FRP_PATH_SSL/privkey.pem
 
 if [ -f $FRPC_CONF ]; then
   rm $FRPC_CONF
