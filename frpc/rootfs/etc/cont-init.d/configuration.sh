@@ -84,12 +84,16 @@ echo "custom_domains = $CUSTOM_DOMAINS" >> $FRPC_CONF
 # echo "group_key = $BALANCING_GROUP_KEY" >> $FRPC_CONF
 echo "plugin = https2http" >> $FRPC_CONF
 echo "plugin_local_addr = $LOCAL_IP" >> $FRPC_CONF
-echo "plugin_crt_path = /ssl/$SERVER_CRT" >> $FRPC_CONF
-echo "plugin_key_path = /ssl/$SERVER_KEY" >> $FRPC_CONF
+echo "plugin_crt_path = $SERVER_CRT" >> $FRPC_CONF
+echo "plugin_key_path = $SERVER_KEY" >> $FRPC_CONF
 echo "plugin_host_header_rewrite = $SSL_PHHR" >> $FRPC_CONF
 echo "plugin_header_X-From-Where = frp" >> $FRPC_CONF
 echo "proxy_protocol_version = $PROXY_PROTOCOL_VERSION" >> $FRPC_CONF
 fi
+
+chmod 600 /ssl/fullchain.pem
+chmod 600 /ssl/privkey.pem
+
 
 echo Start frp as client
 
