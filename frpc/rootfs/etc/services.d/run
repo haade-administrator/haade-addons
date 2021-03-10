@@ -5,6 +5,6 @@
 # ==============================================================================
 
 
-bashio::log.info "Starting Example1..."
+bashio::log.info "Starting Configuration..."
 
-exec /usr/bin/run.sh
+exec /etc/cont-init.d/configuration.sh
