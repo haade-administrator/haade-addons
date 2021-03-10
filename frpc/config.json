@@ -25,8 +25,8 @@
     "use_compression": "true",
     "proxy_protocol_version": "v2",
     "custom_domains": "www.examples.com",
-    "server_crt": "fullchain.pem",
-    "server_key": "privkey.pem",
+    "server_crt": "/ssl/fullchain.pem",
+    "server_key": "/ssl/privkey.pem",
     "ssl_phhr": "127.0.0.1"
   },
   "schema": {
