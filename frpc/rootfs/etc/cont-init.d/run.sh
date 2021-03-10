@@ -31,67 +31,71 @@ FRP_PATH_SSL=$FRP_PATH/ssl
 FRPC_CONF_CERT=$FRP_PATH_SSL/fullchain.pem
 FRPC_CONF_KEY=$FRP_PATH_SSL/privkey.pem
 
-if [ -f $FRPC_CONF ]; then
-  rm $FRPC_CONF
+if [ -f ${FRPC_CONF} ]; then
+  rm ${FRPC_CONF}
 fi
 
-if [ ! $CUSTOM_NAME ]; then
+if [ ! ${CUSTOM_NAME} ]; then
   CUSTOM_NAME=web
-  echo Using default http name $CUSTOM_NAME
+  echo Using default http name ${CUSTOM_NAME}
 fi
 
-#if [ ! $BALANCING_GROUP ]; then
+#if [ ! ${BALANCING_GROUP} ]; then
 #  BALANCING_GROUP=web
-#  echo Using default balancing group name $BALANCING_GROUP
+#  echo Using default balancing group name ${BALANCING_GROUP}
 #fi
 
-if [ "$FRP_TYPE" = "http" ]; then
-echo "[common]" >> $FRPC_CONF
-echo "server_addr = $SERVER_ADDR" >> $FRPC_CONF
-echo "server_port = $SERVER_PORT" >> $FRPC_CONF
-echo "authentication_method = token" >> $FRPC_CONF
-echo "token = $TOKEN_KEY" >> $FRPC_CONF
+mkdir -p /root/.config
 
-echo "[$CUSTOM_NAME]" >> $FRPC_CONF
-echo "type = http" >> $FRPC_CONF
-echo "local_ip = $LOCAL_IP" >> $FRPC_CONF
-echo "local_port = $LOCAL_PORT" >> $FRPC_CONF
-echo "use_encryption = $USE_ENCRYPTION" >> $FRPC_CONF
-echo "use_compression = $USE_COMPRESSION" >> $FRPC_CONF
-echo "proxy_protocol_version = $PROXY_PROTOCOL_VERSION" >> $FRPC_CONF
-echo "group = $BALANCING_GROUP" >> $FRPC_CONF
-echo "group_key = $BALANCING_GROUP_KEY" >> $FRPC_CONF
-# echo "health_check_type = $HEALTH_CHECK_TYPE" >> $FRPC_CONF
-# echo "health_check_url = /status" >> $FRPC_CONF
-# echo "health_check_timeout_s = $HEALTH_CHECK_TIMEOUT_S" >> $FRPC_CONF
-# echo "health_check_max_failed = $HEALTH_CHECK_MAX_FAILED" >> $FRPC_CONF
-# echo "health_check_interval_s = $HEALTH_CHECK_INTERVAL_S" >> $FRPC_CONF
-echo "custom_domains = $CUSTOM_DOMAINS" >> $FRPC_CONF
+{
+if [ "${FRP_TYPE}" = "http" ]; then
+echo "[common]"
+echo "server_addr = ${SERVER_ADDR}"
+echo "server_port = ${SERVER_PORT}"
+echo "authentication_method = token"
+echo "token = ${TOKEN_KEY}"
 
-elif [ "$FRP_TYPE" = "https" ]; then
-echo "[common]" >> $FRPC_CONF
-echo "server_addr = $SERVER_ADDR" >> $FRPC_CONF
-echo "server_port = $SERVER_PORT" >> $FRPC_CONF
-echo "authentication_method = token" >> $FRPC_CONF
-echo "token = $TOKEN_KEY" >> $FRPC_CONF
+echo "[${CUSTOM_NAME}]"
+echo "type = http"
+echo "local_ip = ${LOCAL_IP}"
+echo "local_port = ${LOCAL_PORT}"
+echo "use_encryption = ${USE_ENCRYPTION}"
+echo "use_compression = ${USE_COMPRESSION}"
+echo "proxy_protocol_version = ${PROXY_PROTOCOL_VERSION}"
+echo "group = ${BALANCING_GROUP}"
+echo "group_key = ${BALANCING_GROUP_KEY}"
+# echo "health_check_type = ${HEALTH_CHECK_TYPE}"
+# echo "health_check_url = /status"
+# echo "health_check_timeout_s = ${HEALTH_CHECK_TIMEOUT_S}"
+# echo "health_check_max_failed = ${HEALTH_CHECK_MAX_FAILED}"
+# echo "health_check_interval_s = ${HEALTH_CHECK_INTERVAL_S"
+echo "custom_domains = ${CUSTOM_DOMAINS}"
 
-echo "[$CUSTOM_NAME]" >> $FRPC_CONF
-echo "type = https" >> $FRPC_CONF
-#echo "local_port = $LOCAL_PORT" >> $FRPC_CONF
-echo "use_encryption = $USE_ENCRYPTION" >> $FRPC_CONF
-echo "use_compression = $USE_COMPRESSION" >> $FRPC_CONF
-echo "custom_domains = $CUSTOM_DOMAINS" >> $FRPC_CONF
-# echo "group = $BALANCING_GROUP" >> $FRPC_CONF
-# echo "group_key = $BALANCING_GROUP_KEY" >> $FRPC_CONF
-echo "plugin = https2http" >> $FRPC_CONF
-echo "plugin_local_addr = $LOCAL_IP" >> $FRPC_CONF
-echo "plugin_crt_path = $SERVER_CRT" >> $FRPC_CONF
-echo "plugin_key_path = $SERVER_KEY" >> $FRPC_CONF
-echo "plugin_host_header_rewrite = $SSL_PHHR" >> $FRPC_CONF
-echo "plugin_header_X-From-Where = frp" >> $FRPC_CONF
-echo "proxy_protocol_version = $PROXY_PROTOCOL_VERSION" >> $FRPC_CONF
+elif [ "${FRP_TYPE}" = "https" ]; then
+echo "[common]"
+echo "server_addr = ${SERVER_ADDR}"
+echo "server_port = ${SERVER_PORT}"
+echo "authentication_method = token"
+echo "token = ${TOKEN_KEY}"
+
+echo "[${CUSTOM_NAME}]"
+echo "type = https"
+#echo "local_port = ${LOCAL_PORT}"
+echo "use_encryption = ${USE_ENCRYPTION}"
+echo "use_compression = ${USE_COMPRESSION}"
+echo "custom_domains = ${CUSTOM_DOMAINS}"
+# echo "group = ${BALANCING_GROUP}"
+# echo "group_key = ${BALANCING_GROUP_KEY}"
+echo "plugin = https2http"
+echo "plugin_local_addr = ${LOCAL_IP}"
+echo "plugin_crt_path = ${SERVER_CRT}"
+echo "plugin_key_path = ${SERVER_KEY}"
+echo "plugin_host_header_rewrite = ${SSL_PHHR}"
+echo "plugin_header_X-From-Where = frp"
+echo "proxy_protocol_version = ${PROXY_PROTOCOL_VERSION}"
 fi
+} > /var/frp/frpc.ini
 
 echo Start frp as client
 
-exec $FRP_PATH/frpc -c $FRPC_CONF < /dev/null
+exec ${FRP_PATH}/frpc -c ${FRPC_CONF} < /dev/null
