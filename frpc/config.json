@@ -9,8 +9,9 @@
   "host_network": true,
   "arch": ["armhf", "amd64", "i386"],
   "map": [
-    "ssl",
-    "backup"
+    "config:rw",
+    "ssl:rw",
+    "backup:rw"
   ],
   "options": {
     "log_level": "info",
