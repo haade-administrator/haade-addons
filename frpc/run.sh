@@ -18,6 +18,7 @@ BALANCING_GROUP_KEY=$(jq --raw-output '.balancing_group_key // empty' $CONFIG_PA
 # HEALTH_CHECK_MAX_FAILED=$(jq --raw-output '.health_check_max_failed' $CONFIG_PATH)
 # HEALTH_CHECK_INTERVAL_S=$(jq --raw-output '.health_check_interval_s' $CONFIG_PATH)
 CUSTOM_DOMAINS=$(jq --raw-output '.custom_domains' $CONFIG_PATH)
+SUBDOMAIN=$(jq --raw-output '.subdomain // empty' $CONFIG_PATH)
 CUSTOM_NAME=$(jq --raw-output '.custom_name' $CONFIG_PATH)
 SERVER_CRT=$(jq --raw-output '.server_crt' $CONFIG_PATH)
 SERVER_KEY=$(jq --raw-output '.server_key' $CONFIG_PATH)
@@ -66,6 +67,7 @@ echo "group_key = $BALANCING_GROUP_KEY" >> $FRPC_CONF
 # echo "health_check_max_failed = $HEALTH_CHECK_MAX_FAILED" >> $FRPC_CONF
 # echo "health_check_interval_s = $HEALTH_CHECK_INTERVAL_S" >> $FRPC_CONF
 echo "custom_domains = $CUSTOM_DOMAINS" >> $FRPC_CONF
+echo "subdomain = $SUBDOMAIN" >> $FRPC_CONF
 
 elif [ "$FRP_TYPE" = "https" ]; then
 echo "[common]" >> $FRPC_CONF
@@ -80,6 +82,7 @@ echo "type = https" >> $FRPC_CONF
 echo "use_encryption = $USE_ENCRYPTION" >> $FRPC_CONF
 echo "use_compression = $USE_COMPRESSION" >> $FRPC_CONF
 echo "custom_domains = $CUSTOM_DOMAINS" >> $FRPC_CONF
+echo "subdomain = $SUBDOMAIN" >> $FRPC_CONF
 # echo "group = $BALANCING_GROUP" >> $FRPC_CONF
 # echo "group_key = $BALANCING_GROUP_KEY" >> $FRPC_CONF
 echo "plugin = https2http" >> $FRPC_CONF
