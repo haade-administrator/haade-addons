@@ -32,7 +32,7 @@
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
     "server_addr": "str",
     "server_port": "port",
-    "frp_type": "list(http|https)",
+    "frp_type": "list(http|https|http2https|https2http|https2https)",
     "custom_name": "str",
     "token_key": "str",
     "local_ip": "str?",
@@ -43,7 +43,7 @@
     "balancing_group": "str?",
     "balancing_group_key": "str?",
     "domain_protocol": "list(custom_domains|subdomain)",
-    "custom_domains": "str?",
-    "subdomain": "str?"
+    "custom_domains": "str",
+    "subdomain": "str"
   }
 }
