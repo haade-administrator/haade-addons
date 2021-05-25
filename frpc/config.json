@@ -22,9 +22,11 @@
     "token_key": null,
     "local_ip": "127.0.0.1",
     "local_port": "8123",
-    "use_encryption": "false",
+    "use_encryption": "true",
     "use_compression": "true",
-    "proxy_protocol_version": "v2"
+    "proxy_protocol_version": "v2",
+    "balancing_group": null,
+    "balancing_group_key": null
   },
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
@@ -40,6 +42,7 @@
     "proxy_protocol_version": "str?",
     "balancing_group": "str?",
     "balancing_group_key": "str?",
+    "domain_protocol": "list(custom_domains|subdomain)",
     "custom_domains": "str?",
     "subdomain": "str?"
   }
