@@ -24,6 +24,7 @@
     "local_port": "8123",
     "use_encryption": "true",
     "use_compression": "true",
+    "ssl_phhr": "127.0.0.1",
     "balancing_group": null,
     "balancing_group_key": null
   },
@@ -38,7 +39,7 @@
     "local_port": "port",
     "use_encryption": "list(false|true)",
     "use_compression": "list(false|true)",
-    "proxy_protocol_version": "str?",
+    "ssl_phhr": "str",
     "balancing_group": "str?",
     "balancing_group_key": "str?",
     "domain_protocol": "list(custom_domains|subdomain)",
