@@ -24,7 +24,7 @@
     "local_port": "8123",
     "use_encryption": "true",
     "use_compression": "true",
-    "ssl_phhr": "127.0.0.1",
+    "ssl_phhr": null,
     "balancing_group": null,
     "balancing_group_key": null
   },
@@ -32,18 +32,18 @@
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
     "server_addr": "str",
     "server_port": "port",
-    "frp_type": "list(http|https)",
+    "frp_type": "list(http|https|http2https)",
     "custom_name": "str",
     "token_key": "str",
     "local_ip": "str?",
     "local_port": "port",
     "use_encryption": "list(false|true)",
     "use_compression": "list(false|true)",
-    "ssl_phhr": "str",
+    "ssl_phhr": "str?",
     "balancing_group": "str?",
     "balancing_group_key": "str?",
     "domain_protocol": "list(custom_domains|subdomain)",
-    "custom_domains": "str?",
-    "subdomain": "str?"
+    "custom_domains": "str",
+    "subdomain": "str"
   }
 }
