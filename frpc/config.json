@@ -1,6 +1,6 @@
 {
   "name": "frp",
-  "version": "2021.5.27.3",
+  "version": "2021.5.27.4",
   "slug": "frp",
   "description": "A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.",
   "url": "https://github.com/fatedier/frp",
@@ -35,7 +35,7 @@
     "frp_type": "list(http|https|http2https)",
     "custom_name": "str",
     "token_key": "str",
-    "local_ip": "str?",
+    "local_ip": "str",
     "local_port": "port",
     "use_encryption": "list(false|true)",
     "use_compression": "list(false|true)",
