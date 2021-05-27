@@ -57,27 +57,27 @@ elif [ "$DOMAIN_PROTOCOL" = "subdomain" ]; then
 echo "subdomain = $SUBDOMAIN" >> $FRPC_CONF
 fi
 
-elif [ "$FRP_TYPE" = "https" ]; then
-echo "[common]" >> $FRPC_CONF
-echo "server_addr = $SERVER_ADDR" >> $FRPC_CONF
-echo "server_port = $SERVER_PORT" >> $FRPC_CONF
-echo "authentication_method = token" >> $FRPC_CONF
-echo "token = $TOKEN_KEY" >> $FRPC_CONF
+#elif [ "$FRP_TYPE" = "https" ]; then
+#echo "[common]" >> $FRPC_CONF
+#echo "server_addr = $SERVER_ADDR" >> $FRPC_CONF
+#echo "server_port = $SERVER_PORT" >> $FRPC_CONF
+#echo "authentication_method = token" >> $FRPC_CONF
+#echo "token = $TOKEN_KEY" >> $FRPC_CONF
 
-echo "[$CUSTOM_NAME]" >> $FRPC_CONF
-echo "type = https" >> $FRPC_CONF
-echo "local_ip = $LOCAL_IP" >> $FRPC_CONF
-echo "local_port = $LOCAL_PORT" >> $FRPC_CONF
-echo "use_encryption = $USE_ENCRYPTION" >> $FRPC_CONF
-echo "use_compression = $USE_COMPRESSION" >> $FRPC_CONF
-if [ "$DOMAIN_PROTOCOL" = "custom_domains" ]; then
-echo "custom_domains = $CUSTOM_DOMAINS" >> $FRPC_CONF
-elif [ "$DOMAIN_PROTOCOL" = "subdomain" ]; then
-echo "subdomain = $SUBDOMAIN" >> $FRPC_CONF
-fi
-echo "group = $BALANCING_GROUP" >> $FRPC_CONF
-echo "group_key = $BALANCING_GROUP_KEY" >> $FRPC_CONF
-echo "proxy_protocol_version = $PROXY_PROTOCOL_VERSION" >> $FRPC_CONF
+#echo "[$CUSTOM_NAME]" >> $FRPC_CONF
+#echo "type = https" >> $FRPC_CONF
+#echo "local_ip = $LOCAL_IP" >> $FRPC_CONF
+#echo "local_port = $LOCAL_PORT" >> $FRPC_CONF
+#echo "use_encryption = $USE_ENCRYPTION" >> $FRPC_CONF
+#echo "use_compression = $USE_COMPRESSION" >> $FRPC_CONF
+#if [ "$DOMAIN_PROTOCOL" = "custom_domains" ]; then
+#echo "custom_domains = $CUSTOM_DOMAINS" >> $FRPC_CONF
+#elif [ "$DOMAIN_PROTOCOL" = "subdomain" ]; then
+#echo "subdomain = $SUBDOMAIN" >> $FRPC_CONF
+#fi
+#echo "group = $BALANCING_GROUP" >> $FRPC_CONF
+#echo "group_key = $BALANCING_GROUP_KEY" >> $FRPC_CONF
+#echo "proxy_protocol_version = $PROXY_PROTOCOL_VERSION" >> $FRPC_CONF
 
 elif [ "$FRP_TYPE" = "http2https" ]; then
 echo "[common]" >> $FRPC_CONF
