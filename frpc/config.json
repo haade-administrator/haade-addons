@@ -32,7 +32,7 @@
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
     "server_addr": "str",
     "server_port": "port",
-    "frp_type": "list(http|http2https)",
+    "frp_type": "list(http|https|http2https)",
     "custom_name": "str",
     "token_key": "str",
     "local_ip": "str?",
