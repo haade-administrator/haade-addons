@@ -78,9 +78,8 @@ fi
 echo "group = $BALANCING_GROUP" >> $FRPC_CONF
 echo "group_key = $BALANCING_GROUP_KEY" >> $FRPC_CONF
 echo "proxy_protocol_version = $PROXY_PROTOCOL_VERSION" >> $FRPC_CONF
-fi
 
-if [ "$FRP_TYPE" = "http2https" ]; then
+else [ "$FRP_TYPE" = "http2https" ]
 echo "[common]" >> $FRPC_CONF
 echo "server_addr = $SERVER_ADDR" >> $FRPC_CONF
 echo "server_port = $SERVER_PORT" >> $FRPC_CONF
