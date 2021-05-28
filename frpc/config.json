@@ -24,7 +24,7 @@
     "local_port": "8123",
     "use_encryption": "true",
     "use_compression": "true",
-    "proxy_protocol_version": null,
+    "proxy_protocol_version": "v2",
     "balancing_group": null,
     "balancing_group_key": null,
     "domain_protocol": "subdomain",
