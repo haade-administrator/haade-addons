@@ -14,8 +14,7 @@ USE_COMPRESSION=$(jq --raw-output '.use_compression' $CONFIG_PATH)
 BALANCING_GROUP=$(jq --raw-output '.balancing_group // empty' $CONFIG_PATH)
 BALANCING_GROUP_KEY=$(jq --raw-output '.balancing_group_key // empty' $CONFIG_PATH)
 DOMAIN_PROTOCOL=$(jq --raw-output '.domain_protocol' $CONFIG_PATH)
-CUSTOM_DOMAINS=$(jq --raw-output '.custom_domains' $CONFIG_PATH)
-SUBDOMAIN=$(jq --raw-output '.subdomain' $CONFIG_PATH)
+DOMAINS=$(jq --raw-output '.domains' $CONFIG_PATH)
 CUSTOM_NAME=$(jq --raw-output '.custom_name' $CONFIG_PATH)
 PROXY_PROTOCOL_VERSION=$(jq --raw-output '.proxy_protocol_version // empty' $CONFIG_PATH)
 
@@ -52,9 +51,9 @@ echo "use_compression = $USE_COMPRESSION" >> $FRPC_CONF
 echo "group = $BALANCING_GROUP" >> $FRPC_CONF
 echo "group_key = $BALANCING_GROUP_KEY" >> $FRPC_CONF
 if [ "$DOMAIN_PROTOCOL" = "custom_domains" ]; then
-echo "custom_domains = $CUSTOM_DOMAINS" >> $FRPC_CONF
+echo "custom_domains = $DOMAINS" >> $FRPC_CONF
 elif [ "$DOMAIN_PROTOCOL" = "subdomain" ]; then
-echo "subdomain = $SUBDOMAIN" >> $FRPC_CONF
+echo "subdomain = $DOMAINS" >> $FRPC_CONF
 fi
 
 elif [ "$FRP_TYPE" = "https" ]; then
@@ -71,9 +70,9 @@ echo "local_port = $LOCAL_PORT" >> $FRPC_CONF
 echo "use_encryption = $USE_ENCRYPTION" >> $FRPC_CONF
 echo "use_compression = $USE_COMPRESSION" >> $FRPC_CONF
 if [ "$DOMAIN_PROTOCOL" = "custom_domains" ]; then
-echo "custom_domains = $CUSTOM_DOMAINS" >> $FRPC_CONF
+echo "custom_domains = $DOMAINS" >> $FRPC_CONF
 elif [ "$DOMAIN_PROTOCOL" = "subdomain" ]; then
-echo "subdomain = $SUBDOMAIN" >> $FRPC_CONF
+echo "subdomain = $DOMAINS" >> $FRPC_CONF
 fi
 echo "group = $BALANCING_GROUP" >> $FRPC_CONF
 echo "group_key = $BALANCING_GROUP_KEY" >> $FRPC_CONF
@@ -91,9 +90,9 @@ echo "type = http" >> $FRPC_CONF
 echo "use_encryption = $USE_ENCRYPTION" >> $FRPC_CONF
 echo "use_compression = $USE_COMPRESSION" >> $FRPC_CONF
 if [ "$DOMAIN_PROTOCOL" = "custom_domains" ]; then
-echo "custom_domains = $CUSTOM_DOMAINS" >> $FRPC_CONF
+echo "custom_domains = $DOMAINS" >> $FRPC_CONF
 elif [ "$DOMAIN_PROTOCOL" = "subdomain" ]; then
-echo "subdomain = $SUBDOMAIN" >> $FRPC_CONF
+echo "subdomain = $DOMAINS" >> $FRPC_CONF
 fi
 echo "group = $BALANCING_GROUP" >> $FRPC_CONF
 echo "group_key = $BALANCING_GROUP_KEY" >> $FRPC_CONF
