@@ -26,12 +26,12 @@ if [ -f $FRPC_CONF ]; then
 fi
 
 if [ ! $CUSTOM_NAME ]; then
-  CUSTOM_NAME=tinyconnect
+  CUSTOM_NAME=frpconnect
   echo Using default http name $CUSTOM_NAME
 fi
 
 if [ ! $BALANCING_GROUP ]; then
-  BALANCING_GROUP=tinyweb
+  BALANCING_GROUP=frpweb
   echo Using default balancing group name $BALANCING_GROUP
 fi
 
