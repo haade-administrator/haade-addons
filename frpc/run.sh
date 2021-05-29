@@ -74,8 +74,6 @@ echo "custom_domains = $DOMAINS" >> $FRPC_CONF
 elif [ "$DOMAIN_PROTOCOL" = "subdomain" ]; then
 echo "subdomain = $DOMAINS" >> $FRPC_CONF
 fi
-echo "group = $BALANCING_GROUP" >> $FRPC_CONF
-echo "group_key = $BALANCING_GROUP_KEY" >> $FRPC_CONF
 echo "proxy_protocol_version = $PROXY_PROTOCOL_VERSION" >> $FRPC_CONF
 
 elif [ "$FRP_TYPE" = "http2https" ]; then
