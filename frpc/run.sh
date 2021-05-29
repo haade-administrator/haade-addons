@@ -11,12 +11,12 @@ LOCAL_IP=$(jq --raw-output '.local_ip' $CONFIG_PATH)
 LOCAL_PORT=$(jq --raw-output '.local_port' $CONFIG_PATH)
 USE_ENCRYPTION=$(jq --raw-output '.use_encryption' $CONFIG_PATH)
 USE_COMPRESSION=$(jq --raw-output '.use_compression' $CONFIG_PATH)
-BALANCING_GROUP=$(jq --raw-output '.balancing_group // empty' $CONFIG_PATH)
-BALANCING_GROUP_KEY=$(jq --raw-output '.balancing_group_key // empty' $CONFIG_PATH)
+BALANCING_GROUP=$(jq --raw-output '.balancing_group' $CONFIG_PATH)
+BALANCING_GROUP_KEY=$(jq --raw-output '.balancing_group_key' $CONFIG_PATH)
 DOMAIN_PROTOCOL=$(jq --raw-output '.domain_protocol' $CONFIG_PATH)
 DOMAINS=$(jq --raw-output '.domains' $CONFIG_PATH)
 CUSTOM_NAME=$(jq --raw-output '.custom_name' $CONFIG_PATH)
-PROXY_PROTOCOL_VERSION=$(jq --raw-output '.proxy_protocol_version // empty' $CONFIG_PATH)
+PROXY_PROTOCOL_VERSION=$(jq --raw-output '.proxy_protocol_version' $CONFIG_PATH)
 
 FRP_PATH=/var/frp
 FRPC_CONF=$FRP_PATH/frpc.ini
