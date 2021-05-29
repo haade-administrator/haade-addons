@@ -25,8 +25,8 @@
     "use_encryption": "true",
     "use_compression": "true",
     "proxy_protocol_version": "v2",
-    "balancing_group": null,
-    "balancing_group_key": null,
+    "balancing_group": "your-balancing-group",
+    "balancing_group_key": "password-bg",
     "domain_protocol": "subdomain",
     "domains": "my-domains"
   },
