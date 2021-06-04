@@ -21,8 +21,8 @@ custom_name: // name of you're connection http
 token_key: // key token for secure connection to server
 local_ip: // ip of you're local hassio install by default is 127.0.0.1
 local_port: // by default 8123
-use_encryption: // false or true 
-use_compression: // false or true
+use_encryption: // false or true, true by default
+use_compression: // false or true, true by default
 balancing_group: // only available for type http and http2https to port 80 will be dispatched to proxies in the same group randomly.
 balancing_group_key: // key of secure balancing_group
 domain_protocol: // domain or subdomain frp server
@@ -38,9 +38,9 @@ token_key: // key token for secure connection to server
 frp_type: // https
 local_ip: // ip of you're local hassio install by default is 127.0.0.1
 local_port: // by default 8123
-use_encryption: // false or true 
-use_compression: // false or true
-proxy_protocol_version: // v1 or v2
+use_encryption: // false or true, true by default
+use_compression: // false or true, true by default
+proxy_protocol_version: // v1 or v2, v2 by default and best
 domain_protocol: // domain or subdomain frp server
 domains: // setting you're domains or subdomains example test.haade.fr or test
 ```
@@ -55,8 +55,8 @@ custom_name: // name of you're connection http
 token_key: // key token for secure connection to server
 local_ip: // ip of you're local hassio install by default is 127.0.0.1
 local_port: // by default 8123
-use_encryption: // false or true 
-use_compression: // false or true
+use_encryption: // false or true, true by default
+use_compression: // false or true, true by default
 balancing_group: // only available for type http and http2https to port 80 will be dispatched to proxies in the same group randomly.
 balancing_group_key: // key of secure balancing_group
 domain_protocol: // domain or subdomain frp server
