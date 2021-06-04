@@ -1,4 +1,4 @@
-## What’s changed to 2021.6.1
+## What’s changed to 2021.6.2
 
 ## 🧰 Maintenance
 
