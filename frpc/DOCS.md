@@ -13,35 +13,61 @@ With frpc it is now **easy to connect from the outside without touching various 
 for http service:
 
 ```yaml
-server_addr: // ip of vps
-server_port: // by default 7000
+log_level: trace to fatal logs
+server_addr: // ip of frp server
+server_port: // port of frp server 7000
+frp_type: // http
 custom_name: // name of you're connection http
-token_key: // key token
-type: // http
+token_key: // key token for secure connection to server
+local_ip: // ip of you're local hassio install by default is 127.0.0.1
 local_port: // by default 8123
-balancing_group: // load balancing for optimize
+use_encryption: // false or true 
+use_compression: // false or true
+balancing_group: // only available for type http and http2https to port 80 will be dispatched to proxies in the same group randomly.
 balancing_group_key: // key of secure balancing_group
-custom_domains: // setting you're domains
+domain_protocol: // domain or subdomain frp server
+domains: // setting you're domains or subdomains example test.haade.fr or test
 ```
-for https service with certbot
+for https service
 
 ```yaml
 server_addr: // ip of vps
 server_port: // by default 7000
-custom_name: // name of you're connection http
-token_key: // key token
-type: // https
-local_ip: // 127.0.0.1:8123
+custom_name: // name of you're connection https
+token_key: // key token for secure connection to server
+frp_type: // https
+local_ip: // ip of you're local hassio install by default is 127.0.0.1
 local_port: // by default 8123
-balancing_group: // load balancing for optimize
+use_encryption: // false or true 
+use_compression: // false or true
+proxy_protocol_version: // v1 or v2
+domain_protocol: // domain or subdomain frp server
+domains: // setting you're domains or subdomains example test.haade.fr or test
+```
+for http2https service ( http frp client to https frp server )
+
+```yaml
+log_level: trace to fatal logs
+server_addr: // ip of frp server
+server_port: // port of frp server 7000
+frp_type: // http2https
+custom_name: // name of you're connection http
+token_key: // key token for secure connection to server
+local_ip: // ip of you're local hassio install by default is 127.0.0.1
+local_port: // by default 8123
+use_encryption: // false or true 
+use_compression: // false or true
+balancing_group: // only available for type http and http2https to port 80 will be dispatched to proxies in the same group randomly.
 balancing_group_key: // key of secure balancing_group
-custom_domains: // setting you're domains
+domain_protocol: // domain or subdomain frp server
+domains: // setting you're domains or subdomains example test.haade.fr or test
 ```
 
 ### Option: `type`
 
 - `tcp`: partially adapted
-- `http`: full adapted to connect to webhost
-- `https`: next release
+- `http`: full adapted to connect to webhost simply and fast but not secure
+- `https`: full adapted to connect secure mode but difficult
+- `http2https` : full adapted to connect to frp server with key https
 
 [frp-fatedier]: https://github.com/fatedier/frp
