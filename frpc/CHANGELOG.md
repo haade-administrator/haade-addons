@@ -1,8 +1,10 @@
-## What’s changed
+## What’s changed to 2021.6.1
 
 ## 🧰 Maintenance
 
 ## ⬆️ Dependency updates
-- ⬆ Initial update to frp @haade-administrator (#2)
-- Erase files in rootfs and COPY rootfs to Dockerfile @haade-administrator
-- Error to run.sh
+- http connection full
+- https frpc connection full but not tested
+- add http2https connection for vps server frp
+- update documentation
+- look to haade.fr
