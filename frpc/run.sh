@@ -100,10 +100,6 @@ echo "plugin_host_header_rewrite = $LOCAL_IP" >> $FRPC_CONF
 echo "plugin_header_X-From-Where = frp" >> $FRPC_CONF
 fi
 
-echo Verify frpc configuration
-
-exec $FRP_PATH/frpc -c verify $FRPC_CONF < /dev/null
-
 echo Start frp as client
 
 exec $FRP_PATH/frpc -c $FRPC_CONF < /dev/null
