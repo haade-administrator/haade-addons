@@ -1,7 +1,7 @@
 # Haade Add-on: FRPc
 Adapted to [Frp by Fatedier][frp-fatedier]
 
-full tutorial in french to https://www.haade.fr/?p=9058
+full tutorial in french or english to https://www.haade.fr/blog/home-automation-smarthome-jeedom-homeassistant/tutos-haade-lab/frp-configurer-acces-distance-homeassistant/
 
 ## What is FRPc
 frp is a fast reverse proxy to help you expose a local server behind a NAT or firewall to the Internet. As of now, it supports **HTTP and HTTPS** protocols, where requests can be forwarded to internal services by domain name.
