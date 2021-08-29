@@ -1,3 +1,8 @@
+## 2021.8.29
+- ADD: addons-base:10.0.2
+- ADD: Frp fatedier V0.37.0
+- ADD: Arch armv8
+
 ## 2021.6.5
 - ADD: addons-base:9.2.1
 - ADD: Frp fatedier V0.37.0
