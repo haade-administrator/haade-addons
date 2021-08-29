@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:9.2.1
+ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:10.0.2
 FROM $BUILD_FROM
 
 # Set shell
@@ -12,7 +12,7 @@ ENV \
     LANGUAGE=en_US:en \
     LC_ALL=en_US.UTF-8
 
-ARG FRP_VERSION=0.37.0
+ARG FRP_VERSION=0.37.1
 
 RUN apk update \
      && apk add --no-cache openssl jq wget curl nano
@@ -21,6 +21,7 @@ RUN set -x \
     && ARCH="${BUILD_ARCH}" \
     && if [ "${BUILD_ARCH}" = "armhf" ]; then ARCH="arm"; fi \
     && if [ "${BUILD_ARCH}" = "armv7" ]; then ARCH="arm"; fi \
+    && if [ "${BUILD_ARCH}" = "armv8" ]; then ARCH="arm64"; fi \
     && URL_VERSION="https://raw.githubusercontent.com/haade-administrator/haade-addons/master/version.json" \
     && FRP_VERSION=$(curl -s $URL_VERSION | jq -e -r '.frp') \
     && wget https://github.com/fatedier/frp/releases/download/v${FRP_VERSION}/frp_${FRP_VERSION}_linux_${ARCH}.tar.gz \
