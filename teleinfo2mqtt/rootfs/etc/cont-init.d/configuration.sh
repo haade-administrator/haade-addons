@@ -9,7 +9,6 @@ declare mqtt
 declare password=""
 declare port="1883"
 declare username=""
-declare zwave
 
 if ! bashio::fs.directory_exists "/data/db"; then
   mkdir -p /data/db
@@ -48,18 +47,7 @@ mqtt=$(bashio::var.json \
   username "${username}" \
 )
 
-zwave=$(bashio::var.json \
-  commandsTimeout "^30" \
-  logLevel info \
-  logToFile "^false" \
-  networkKey "" \
-  port "" \
-  serverEnabled "^true" \
-  serverPort "^3000" \
-)
-
 bashio::var.json \
   gateway "^${gateway}" \
   mqtt "^${mqtt}" \
-  zwave "^${zwave}" \
   > /data/store/settings.json

@@ -6,63 +6,54 @@ FROM ${BUILD_FROM}
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
-# hadolint ignore=DL3003
+
 RUN \
-    apk add --no-cache --virtual .build-dependencies \
-        build-base=0.5-r2 \
-        linux-headers=5.10.41-r0 \
-        npm=7.17.0-r0 \
-        python3-dev=3.9.5-r1 \
-        yarn=1.22.10-r0 \
+    apk update
     \
-    && apk add --no-cache \
-        eudev=3.2.10-r0 \
-        libusb=1.0.24-r2 \
-        nginx=1.20.1-r3 \
-        nodejs=14.17.6-r0 \
+    && apk add --no-cache make \
+    gcc \
+    g++ \
+    python3 \
+    linux-headers udev
     \
-    && curl -J -L -o /tmp/zwavejs2mqtt.tar.gz \
-        "https://github.com/zwave-js/zwavejs2mqtt/archive/v5.6.1.tar.gz" \
+    && curl -J -L -o /tmp/teleinfo2mqtt.tar.gz \
+        "https://github.com/fmartinou/teleinfo-mqtt/archive/refs/tags/6.0.2.tar.gz" \
     && tar zxvf \
-        /tmp/zwavejs2mqtt.tar.gz \
-        --strip 1 -C /opt \
+        /tmp/teleinfo2mqtt.tar.gz \
+        --strip 1 -C /home/node/app \
     \
-    && cd /opt \
-    && yarn config set unsafe-perm \
-    && yarn install --ignore-optional \
-    && yarn run build:server \
-    && yarn run build:ui \
-    && yarn install --production --ignore-optional \
-    && yarn cache clean \
-    \
-    && apk del --no-cache --purge .build-dependencies \
+    && cp Docker.entrypoint.sh /usr/bin/entrypoint.sh \
+    && chmod +x /usr/bin/entrypoint.sh \
     && rm -f -r \
-        /etc/nginx \
-        /opt/build \
-        /opt/index.html \
-        /opt/package.sh \
-        /opt/src \
-        /opt/static \
-        /opt/stylesheets \
-        /opt/.[!.]* \
-        /opt/*.md \
-        /opt/nodemon.json \
-        /opt/kustomization.yaml \
-        /opt/kubernetes \
-        /opt/docker \
-        /opt/docs \
-        /root/.cache \
-        /root/.config \
-        /root/.npmrc \
-        /root/.node-gyp \
-        /root/.npm \
         /tmp/.[!.]* \
         /tmp/* \
-        /usr/lib/node_modules \
-        /usr/local/share/.cache
+    && cd /home/node/app \
+    && rm -f -r \
+        .[!.]* \
+        *.md \
+        Dockerfile \
+        Makefile \
+        *.sh
 
-# Copy root filesystem
-COPY rootfs /
+WORKDIR /home/node/app
+ENV LOG_FORMAT=text
+
+ENTRYPOINT ["/usr/bin/entrypoint.sh"]
+
+# Default Command
+CMD ["node", "index"]
+
+# Add TZDATA to allow easy local time configuration
+RUN apk update \
+    && apk add tzdata \
+    && rm -rf /var/cache/apk/*
+
+# Copy app
+COPY app/ ./
+
+# Install dependendencies
+RUN npm ci --production
+
 
 # Build arguments
 ARG BUILD_ARCH
