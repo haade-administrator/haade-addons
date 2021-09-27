@@ -18,5 +18,11 @@
   "map": ["share:rw"],
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)?"
+  },
+  "serial": {
+  "port": "/dev/ttyUSB0"
+  },
+  "serial": {
+      "port": "str"
   }
 }
