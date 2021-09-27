@@ -1,7 +1,7 @@
 <div align="center">
 <img src="images/logo.png">
 <h1>Home Assistant Add-on:</h1>
-<ol>
+<ol style="display:align-center">
 <li>Frpc client</li>
 <li>Teleinfo2mqtt</li>
 </ol>
