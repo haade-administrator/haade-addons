@@ -1,13 +1,13 @@
 <div align="center">
 <img src="images/logo.png">
 <h1>Home Assistant Add-on:</h1>
-<ol style="display:align-center">
+<ol align="center">
 <li>Frpc client</li>
 <li>Teleinfo2mqtt</li>
 </ol>
 
 [![GitHub release](https://img.shields.io/github/tag/fatedier/frp.svg?label=release-fatedier)](https://github.com/fatedier/frp/releases)
-[![GitHub release](https://img.shields.io/github/tag/haade-administrator/haade-addons.svg?label=release-frpc)](https://github.com/haade-administrator/haade-addons/releases)
+[![GitHub release](https://img.shields.io/github/tag/haade-administrator/haade-addons.svg?label=release-haade)](https://github.com/haade-administrator/haade-addons/releases)
 [![GitHub release](https://img.shields.io/github/tag/fmartinou/teleinfo-mqtt.svg?label=release-fmartinou)](https://github.com/fmartinou/teleinfo-mqtt/releases)
 
 <br>
