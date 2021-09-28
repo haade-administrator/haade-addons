@@ -8,20 +8,19 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Setup base
 
 RUN \
-    apk update
-    \
+    apk update \
     && apk add --no-cache make \
+    nodejs \
+    nodejs-npm \
     gcc \
     g++ \
     python3 \
-    linux-headers udev
-    \
+    linux-headers udev \
     && curl -J -L -o /tmp/teleinfo2mqtt.tar.gz \
         "https://github.com/fmartinou/teleinfo-mqtt/archive/refs/tags/6.0.2.tar.gz" \
     && tar zxvf \
         /tmp/teleinfo2mqtt.tar.gz \
         --strip 1 -C /home/node/app \
-    \
     && cp Docker.entrypoint.sh /usr/bin/entrypoint.sh \
     && chmod +x /usr/bin/entrypoint.sh \
     && rm -f -r \
@@ -48,11 +47,11 @@ RUN apk update \
     && apk add tzdata \
     && rm -rf /var/cache/apk/*
 
-# Copy app
-COPY app/ ./
-
 # Install dependendencies
 RUN npm ci --production
+
+WORKDIR /
+COPY rootfs/
 
 
 # Build arguments
