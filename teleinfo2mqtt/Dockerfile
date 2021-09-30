@@ -50,8 +50,10 @@ RUN apk update \
     && rm -rf /var/cache/apk/* \
     && rm -f -r \
         /tmp/.[!.]* \
-        /tmp/* \
-    && cp app/ ./ \
+        /tmp/* 
+    
+RUN \
+    npm i \
     && npm ci --production
 
 WORKDIR /
