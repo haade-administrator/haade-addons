@@ -53,7 +53,8 @@ RUN apk update \
         /tmp/* 
     
 RUN \
-    npm i \
+    cd ./app \
+    && npm i \
     && npm ci --production
 
 WORKDIR /

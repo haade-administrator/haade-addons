@@ -11,10 +11,13 @@
   "startup": "system",
   "init": false,
   "arch": ["aarch64", "amd64", "armhf", "armv7", "i386"],
-  "services": ["mqtt:want"],
   "uart": true,
   "udev": true,
-  "map": ["share:rw"],
+  "map": [
+    "config:rw",
+    "ssl:rw",
+    "backup:rw"
+  ],
   "options": {
     "serial": {
       "port": "/dev/ttyUSB0"
