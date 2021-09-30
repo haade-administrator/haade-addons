@@ -1,13 +1,13 @@
 {
   "name": "frp",
-  "version": "2021.8.29",
+  "version": "2021.9.30",
   "slug": "frp",
   "description": "A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.",
   "url": "https://github.com/fatedier/frp",
   "startup": "application",
   "boot": "auto",
   "host_network": true,
-  "arch": ["armhf", "amd64", "i386"],
+  "arch": ["armhf", "armv7", "amd64", "aarch64"],
   "map": [
     "config:rw",
     "ssl:rw",

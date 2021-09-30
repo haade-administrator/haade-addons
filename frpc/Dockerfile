@@ -21,7 +21,6 @@ RUN set -x \
     && ARCH="${BUILD_ARCH}" \
     && if [ "${BUILD_ARCH}" = "armhf" ]; then ARCH="arm"; fi \
     && if [ "${BUILD_ARCH}" = "armv7" ]; then ARCH="arm"; fi \
-    && if [ "${BUILD_ARCH}" = "armv8" ]; then ARCH="arm64"; fi \
     && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \
     && URL_VERSION="https://raw.githubusercontent.com/haade-administrator/haade-addons/master/version.json" \
     && FRP_VERSION=$(curl -s $URL_VERSION | jq -e -r '.frp') \

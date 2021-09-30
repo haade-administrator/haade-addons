@@ -1,7 +1,8 @@
 #!/bin/bash
 set -e
 
-CONFIG_PATH=/data/options.json
+bashio::addon.options > /data/options.json
+# CONFIG_PATH=/data/options.json
 
 SERVER_ADDR=$(bashio::config 'server_addr')
 SERVER_PORT=$(bashio::config 'server_port')
