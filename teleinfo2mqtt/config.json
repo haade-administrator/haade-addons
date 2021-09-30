@@ -16,13 +16,15 @@
   "uart": true,
   "udev": true,
   "map": ["share:rw"],
+  "options": {
+    "serial": {
+      "port": "/dev/ttyUSB0"
+      }
+  },
   "schema": {
-    "log_level": "list(trace|debug|info|notice|warning|error|fatal)?"
-  },
-  "serial": {
-  "port": "/dev/ttyUSB0"
-  },
-  "serial": {
+    "log_level": "list(trace|debug|info|notice|warning|error|fatal)?",
+    "serial": {
       "port": "str"
+    }
   }
 }
