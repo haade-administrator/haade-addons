@@ -3,20 +3,20 @@ set -e
 
 CONFIG_PATH=/data/options.json
 
-SERVER_ADDR=$(jq --raw-output '.server_addr' $CONFIG_PATH)
-SERVER_PORT=$(jq --raw-output '.server_port' $CONFIG_PATH)
-FRP_TYPE=$(jq --raw-output '.frp_type' $CONFIG_PATH)
-TOKEN_KEY=$(jq --raw-output '.token_key' $CONFIG_PATH)
-LOCAL_IP=$(jq --raw-output '.local_ip' $CONFIG_PATH)
-LOCAL_PORT=$(jq --raw-output '.local_port' $CONFIG_PATH)
-USE_ENCRYPTION=$(jq --raw-output '.use_encryption' $CONFIG_PATH)
-USE_COMPRESSION=$(jq --raw-output '.use_compression' $CONFIG_PATH)
-BALANCING_GROUP=$(jq --raw-output '.balancing_group' $CONFIG_PATH)
-BALANCING_GROUP_KEY=$(jq --raw-output '.balancing_group_key' $CONFIG_PATH)
-DOMAIN_PROTOCOL=$(jq --raw-output '.domain_protocol' $CONFIG_PATH)
-DOMAINS=$(jq --raw-output '.domains' $CONFIG_PATH)
-CUSTOM_NAME=$(jq --raw-output '.custom_name' $CONFIG_PATH)
-PROXY_PROTOCOL_VERSION=$(jq --raw-output '.proxy_protocol_version' $CONFIG_PATH)
+SERVER_ADDR=$(bashio::config 'server_addr')
+SERVER_PORT=$(bashio::config 'server_port')
+FRP_TYPE=$(bashio::config 'frp_type')
+TOKEN_KEY=$(bashio::config 'token_key')
+LOCAL_IP=$(bashio::config 'local_ip')
+LOCAL_PORT=$(bashio::config 'local_port')
+USE_ENCRYPTION=$(bashio::config 'use_encryption')
+USE_COMPRESSION=$(bashio::config 'use_compression')
+BALANCING_GROUP=$(bashio::config 'balancing_group')
+BALANCING_GROUP_KEY=$(bashio::config 'balancing_group_key')
+DOMAIN_PROTOCOL=$(bashio::config 'domain_protocol')
+DOMAINS=$(bashio::config 'domains')
+CUSTOM_NAME=$(bashio::config 'custom_name')
+PROXY_PROTOCOL_VERSION=$(bashio::config 'proxy_protocol_version')
 
 FRP_PATH=/var/frp
 FRPC_CONF=$FRP_PATH/frpc.ini
