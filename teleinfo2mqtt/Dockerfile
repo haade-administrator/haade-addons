@@ -8,6 +8,8 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
 
+ARG TELEINFO_VERSION=6.0.2
+
 RUN \
     apk update \
     && apk add --no-cache make \
@@ -20,16 +22,13 @@ RUN \
     && mkdir /home/node \
     && mkdir /home/node/app \
     && curl -J -L -o /tmp/teleinfo2mqtt.tar.gz \
-        "https://github.com/fmartinou/teleinfo-mqtt/archive/refs/tags/6.0.2.tar.gz" \
+        "https://github.com/fmartinou/teleinfo-mqtt/archive/refs/tags/${TELEINFO_VERSION}.tar.gz" \
     && tar zxvf \
         /tmp/teleinfo2mqtt.tar.gz \
         --strip 1 -C /home/node/app \
+    && cd /home/node/app \
     && cp Docker.entrypoint.sh /usr/bin/entrypoint.sh \
     && chmod +x /usr/bin/entrypoint.sh \
-    && rm -f -r \
-        /tmp/.[!.]* \
-        /tmp/* \
-    && cd /home/node/app \
     && rm -f -r \
         .[!.]* \
         *.md \
@@ -49,11 +48,14 @@ CMD ["node", "index"]
 RUN apk update \
     && apk add tzdata \
     && rm -rf /var/cache/apk/* \
+    && rm -f -r \
+        /tmp/.[!.]* \
+        /tmp/* \
     && cp app/ ./ \
     && npm ci --production
 
 WORKDIR /
-COPY rootfs/
+COPY rootfs /
 
 
 # Build arguments
