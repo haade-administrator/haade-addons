@@ -1,0 +1,50 @@
+{
+  "name": "frp",
+  "version": "2021.9.30",
+  "slug": "frp",
+  "description": "A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.",
+  "url": "https://github.com/fatedier/frp",
+  "startup": "application",
+  "boot": "auto",
+  "host_network": true,
+  "arch": ["armhf", "armv7", "amd64", "aarch64"],
+  "map": [
+    "config:rw",
+    "ssl:rw",
+    "backup:rw"
+  ],
+  "options": {
+    "log_level": "info",
+    "server_addr": null,
+    "server_port": "7000",
+    "frp_type": "http",
+    "custom_name": null,
+    "token_key": null,
+    "local_ip": "127.0.0.1",
+    "local_port": "8123",
+    "use_encryption": "true",
+    "use_compression": "true",
+    "proxy_protocol_version": "v2",
+    "balancing_group": "your-balancing-group",
+    "balancing_group_key": "password-bg",
+    "domain_protocol": "subdomain",
+    "domains": "my-domains"
+  },
+  "schema": {
+    "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
+    "server_addr": "str",
+    "server_port": "port",
+    "frp_type": "list(http|https|http2https)",
+    "custom_name": "str",
+    "token_key": "str",
+    "local_ip": "str?",
+    "local_port": "port",
+    "use_encryption": "list(false|true)",
+    "use_compression": "list(false|true)",
+    "proxy_protocol_version": "list(v1|v2)",
+    "balancing_group": "str?",
+    "balancing_group_key": "str?",
+    "domain_protocol": "list(custom_domains|subdomain)",
+    "domains": "str"
+  }
+}
