@@ -10,7 +10,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 ARG TELEINFO_VERSION=6.0.2
 
-# Install Node+npm+yarn
+# Install Node+npm+yarn https://github.com/nodejs/docker-node/blob/80ded64083b5c9be7853d9d3634a22a96e15e92d/14/alpine3.12/Dockerfile
 
 ENV NODE_VERSION 14.13.0
 
@@ -115,13 +115,13 @@ RUN \
         --strip 1 -C /home/node/app \
     && cd /home/node/app \
     && cp Docker.entrypoint.sh /usr/bin/entrypoint.sh \
-    && chmod +x /usr/bin/entrypoint.sh \
-    && rm -f -r \
-        .[!.]* \
-        *.md \
-        Dockerfile \
-        Makefile \
-        *.sh
+    && chmod +x /usr/bin/entrypoint.sh 
+#    && rm -f -r \
+#        .[!.]* \
+#        *.md \
+#        Dockerfile \
+#        Makefile \
+#        *.sh
 
 WORKDIR /home/node/app
 ENV LOG_FORMAT=text
