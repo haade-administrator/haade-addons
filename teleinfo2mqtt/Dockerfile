@@ -10,17 +10,30 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 ARG TELEINFO_VERSION=6.0.2
 
+# Installation des paquets
+
 RUN \
     apk update \
     && apk add --no-cache make \
-    nodejs \
-    npm \
     gcc \
     g++ \
     python3 \
-    linux-headers udev \
-    && mkdir /home/node \
-    && mkdir /home/node/app \
+    linux-headers udev 
+
+    # Install Nodejs
+RUN apk add --update nodejs npm
+RUN addgroup -S node && adduser -S node -G node
+USER node
+RUN mkdir /home/node/code
+WORKDIR /home/node/code
+COPY --chown=node:node package-lock.json package.json ./
+RUN npm ci
+COPY --chown=node:node . .
+CMD ["node", "index.js"]
+
+RUN \
+    apk update \
+    && mkdir -p /home/node/app \
     && curl -J -L -o /tmp/teleinfo2mqtt.tar.gz \
         "https://github.com/fmartinou/teleinfo-mqtt/archive/refs/tags/${TELEINFO_VERSION}.tar.gz" \
     && tar zxvf \
@@ -41,9 +54,6 @@ ENV LOG_FORMAT=text
 
 ENTRYPOINT ["/usr/bin/entrypoint.sh"]
 
-# Default Command
-CMD ["node", "index"]
-
 # Add TZDATA to allow easy local time configuration
 RUN apk update \
     && apk add tzdata \
@@ -53,9 +63,7 @@ RUN apk update \
         /tmp/* 
     
 RUN \
-    cd ./app \
-    && npm i \
-    && npm ci --production
+    npm ci --production
 
 WORKDIR /
 COPY rootfs /
