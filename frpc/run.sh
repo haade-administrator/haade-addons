@@ -7,6 +7,7 @@ SERVER_ADDR=$(jq --raw-output '.server_addr' $CONFIG_PATH)
 SERVER_PORT=$(jq --raw-output '.server_port' $CONFIG_PATH)
 FRP_TYPE=$(jq --raw-output '.frp_type' $CONFIG_PATH)
 TOKEN_KEY=$(jq --raw-output '.token_key' $CONFIG_PATH)
+CONNECT_SERVER_LOCAL_IP=$(jq --raw-output '.connect_server_local_ip' $CONFIG_PATH)
 LOCAL_IP=$(jq --raw-output '.local_ip' $CONFIG_PATH)
 LOCAL_PORT=$(jq --raw-output '.local_port' $CONFIG_PATH)
 USE_ENCRYPTION=$(jq --raw-output '.use_encryption' $CONFIG_PATH)
@@ -44,6 +45,7 @@ echo "token = $TOKEN_KEY" >> $FRPC_CONF
 
 echo "[$CUSTOM_NAME]" >> $FRPC_CONF
 echo "type = http" >> $FRPC_CONF
+echo "connect_server_local_ip = $CONNECT_SERVER_LOCAL_IP" >> $FRPC_CONF
 echo "local_ip = $LOCAL_IP" >> $FRPC_CONF
 echo "local_port = $LOCAL_PORT" >> $FRPC_CONF
 echo "use_encryption = $USE_ENCRYPTION" >> $FRPC_CONF
@@ -65,6 +67,7 @@ echo "token = $TOKEN_KEY" >> $FRPC_CONF
 
 echo "[$CUSTOM_NAME]" >> $FRPC_CONF
 echo "type = https" >> $FRPC_CONF
+echo "connect_server_local_ip = $CONNECT_SERVER_LOCAL_IP" >> $FRPC_CONF
 echo "local_ip = $LOCAL_IP" >> $FRPC_CONF
 echo "local_port = $LOCAL_PORT" >> $FRPC_CONF
 echo "use_encryption = $USE_ENCRYPTION" >> $FRPC_CONF
