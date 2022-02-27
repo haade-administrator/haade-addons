@@ -57,6 +57,7 @@ server_port: // port of frp server 7000
 frp_type: // http2https
 custom_name: // name of you're connection http
 token_key: // key token for secure connection to server
+connect_server_local_ip: //# set client binding ip when connect server, default is empty. Only when protocol = tcp or websocket, the value will be used.
 local_ip: // ip of you're local hassio install by default is 127.0.0.1
 local_port: // by default 8123
 use_encryption: // false or true, true by default
