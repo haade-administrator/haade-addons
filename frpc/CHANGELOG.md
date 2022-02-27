@@ -1,3 +1,8 @@
+## 2022.2.28
+- ADD: addons-base:11.0.1
+- ADD: Frp fatedier V0.39.2
+- ADD: connect_server_local_ip for tcp connect
+
 ## 2021.8.29
 - ADD: addons-base:10.0.2
 - ADD: Frp fatedier V0.37.0
