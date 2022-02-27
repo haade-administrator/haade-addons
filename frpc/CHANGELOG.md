@@ -1,3 +1,6 @@
+## 2022.3.1
+- ADD: choice of protocol: tcp, kcp or websocket
+
 ## 2022.2.28
 - ADD: addons-base:11.0.1
 - ADD: Frp fatedier V0.39.2
