@@ -1,5 +1,8 @@
+## 2023-5-10
+- REMOVE: obligatory group
+
 ## 2023-5-9
-- REMOVE: confif init group and group key
+- REMOVE: config init group and group key
 
 ## 2023-5-8
 - UPDATE: frp v0.48.0
