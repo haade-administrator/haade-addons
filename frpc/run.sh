@@ -32,11 +32,6 @@ if [ ! $CUSTOM_NAME ]; then
   echo Using default http name $CUSTOM_NAME
 fi
 
-if [ ! $BALANCING_GROUP ]; then
-  BALANCING_GROUP=frpweb
-  echo Using default balancing group name $BALANCING_GROUP
-fi
-
 if [ "$FRP_TYPE" = "http" ]; then
 echo "[common]" >> $FRPC_CONF
 echo "server_addr = $SERVER_ADDR" >> $FRPC_CONF
