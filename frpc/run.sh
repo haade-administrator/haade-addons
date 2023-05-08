@@ -32,6 +32,11 @@ if [ ! $CUSTOM_NAME ]; then
   echo Using default http name $CUSTOM_NAME
 fi
 
+if [ ! $BALANCING_GROUP ]; then
+  BALANCING_GROUP=frpweb
+  echo Using default balancing group name $BALANCING_GROUP
+fi
+
 if [ "$FRP_TYPE" = "http" ]; then
 echo "[common]" >> $FRPC_CONF
 echo "server_addr = $SERVER_ADDR" >> $FRPC_CONF
@@ -47,8 +52,6 @@ echo "local_ip = $LOCAL_IP" >> $FRPC_CONF
 echo "local_port = $LOCAL_PORT" >> $FRPC_CONF
 echo "use_encryption = $USE_ENCRYPTION" >> $FRPC_CONF
 echo "use_compression = $USE_COMPRESSION" >> $FRPC_CONF
-echo "group = $BALANCING_GROUP" >> $FRPC_CONF
-echo "group_key = $BALANCING_GROUP_KEY" >> $FRPC_CONF
 if [ "$DOMAIN_PROTOCOL" = "custom_domains" ]; then
 echo "custom_domains = $DOMAINS" >> $FRPC_CONF
 elif [ "$DOMAIN_PROTOCOL" = "subdomain" ]; then
