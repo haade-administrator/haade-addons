@@ -1,6 +1,6 @@
 name: frp
 description: A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.
-version: 2023.5.8
+version: 2023.5.9
 url: https://github.com/fatedier/frp
 startup: application
 boot: auto
@@ -30,8 +30,8 @@ options:
   use_encryption: true
   use_compression: true
   proxy_protocol_version: v2
-  balancing_group: your-balancing-group
-  balancing_group_key: password-bg
+  balancing_group: null
+  balancing_group_key: null
   domain_protocol: subdomain
   domains: my-domains
 
@@ -49,7 +49,7 @@ schema:
   use_encryption: list(false|true)
   use_compression: list(false|true)
   proxy_protocol_version: list(v1|v2)
-  balancing_group: str?
-  balancing_group_key: str?
+  balancing_group: str
+  balancing_group_key: str
   domain_protocol: list(custom_domains|subdomain)
   domains: str

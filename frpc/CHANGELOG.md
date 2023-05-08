@@ -1,3 +1,6 @@
+## 2023-5-9
+- REMOVE: confif init group and group key
+
 ## 2023-5-8
 - UPDATE: frp v0.48.0
 - CHANGE: json to yaml
