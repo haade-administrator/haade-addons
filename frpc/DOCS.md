@@ -27,8 +27,8 @@ local_ip: // ip of you're local hassio install by default is 127.0.0.1
 local_port: // by default 8123
 use_encryption: // false or true, true by default
 use_compression: // false or true, true by default
-balancing_group: // only available for type http and http2https to port 80 will be dispatched to proxies in the same group randomly.
-balancing_group_key: // key of secure balancing_group
+balancing_group: // obligatory protected domains or subdomains
+balancing_group_key: // obligatory pass of balancing group
 domain_protocol: // domain or subdomain frp server
 domains: // setting you're domains or subdomains example test.haade.fr or test
 ```
@@ -64,8 +64,6 @@ local_ip: // ip of you're local hassio install by default is 127.0.0.1
 local_port: // by default 8123
 use_encryption: // false or true, true by default
 use_compression: // false or true, true by default
-balancing_group: // only available for type http and http2https to port 80 will be dispatched to proxies in the same group randomly.
-balancing_group_key: // key of secure balancing_group
 domain_protocol: // domain or subdomain frp server
 domains: // setting you're domains or subdomains example test.haade.fr or test
 ```

@@ -98,8 +98,6 @@ echo "custom_domains = $DOMAINS" >> $FRPC_CONF
 elif [ "$DOMAIN_PROTOCOL" = "subdomain" ]; then
 echo "subdomain = $DOMAINS" >> $FRPC_CONF
 fi
-echo "group = $BALANCING_GROUP" >> $FRPC_CONF
-echo "group_key = $BALANCING_GROUP_KEY" >> $FRPC_CONF
 echo "plugin = http2https" >> $FRPC_CONF
 echo "plugin_local_addr = $LOCAL_IP:$LOCAL_PORT" >> $FRPC_CONF
 echo "plugin_host_header_rewrite = $LOCAL_IP" >> $FRPC_CONF
