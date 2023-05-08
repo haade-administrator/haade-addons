@@ -1,3 +1,10 @@
+## 2023-5-8
+- UPDATE: frp v0.48.0
+- CHANGE: json to yaml
+
+## 2023-5-1
+- ADD: option init false for s6 v3
+
 ## 2022.3.1
 - ADD: choice of protocol: tcp, kcp or websocket
 
