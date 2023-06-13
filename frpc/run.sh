@@ -42,9 +42,9 @@ if [ "$FRP_TYPE" = "http" ]; then
 echo "[common]" >> $FRPC_CONF
 echo "server_addr = $SERVER_ADDR" >> $FRPC_CONF
 echo "server_port = $SERVER_PORT" >> $FRPC_CONF
-echo "authentication_method = token" >> $FRPC_CONF
 
 if [ "$PLUGINS" = "none" ]; then
+echo "authentication_method = token" >> $FRPC_CONF
 echo "token = $TOKEN_KEY" >> $FRPC_CONF
 elif [ "$PLUGINS" = "fp-multiuser" ]; then
 echo "user = $CUSTOM_NAME" >> $FRPC_CONF
@@ -71,8 +71,14 @@ elif [ "$FRP_TYPE" = "https" ]; then
 echo "[common]" >> $FRPC_CONF
 echo "server_addr = $SERVER_ADDR" >> $FRPC_CONF
 echo "server_port = $SERVER_PORT" >> $FRPC_CONF
+
+if [ "$PLUGINS" = "none" ]; then
 echo "authentication_method = token" >> $FRPC_CONF
 echo "token = $TOKEN_KEY" >> $FRPC_CONF
+elif [ "$PLUGINS" = "fp-multiuser" ]; then
+echo "user = $CUSTOM_NAME" >> $FRPC_CONF
+echo "meta_token = $TOKEN_KEY" >> $FRPC_CONF
+fi
 
 echo "[$CUSTOM_NAME]" >> $FRPC_CONF
 echo "type = https" >> $FRPC_CONF
@@ -93,8 +99,14 @@ elif [ "$FRP_TYPE" = "http2https" ]; then
 echo "[common]" >> $FRPC_CONF
 echo "server_addr = $SERVER_ADDR" >> $FRPC_CONF
 echo "server_port = $SERVER_PORT" >> $FRPC_CONF
+
+if [ "$PLUGINS" = "none" ]; then
 echo "authentication_method = token" >> $FRPC_CONF
 echo "token = $TOKEN_KEY" >> $FRPC_CONF
+elif [ "$PLUGINS" = "fp-multiuser" ]; then
+echo "user = $CUSTOM_NAME" >> $FRPC_CONF
+echo "meta_token = $TOKEN_KEY" >> $FRPC_CONF
+fi
 
 echo "[$CUSTOM_NAME]" >> $FRPC_CONF
 echo "type = http" >> $FRPC_CONF
