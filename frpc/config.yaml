@@ -1,6 +1,6 @@
 name: frp
 description: A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.
-version: 2023.5.15
+version: 2023.6.13
 url: https://github.com/fatedier/frp
 startup: application
 boot: auto
@@ -21,6 +21,7 @@ options:
   server_addr: null
   server_port: 7000
   frp_type: http
+  plugins: none
   custom_name: null
   token_key: null
   protocol: tcp
@@ -40,6 +41,7 @@ schema:
   server_addr: str
   server_port: port
   frp_type: list(http|https|http2https)
+  plugins: list(none|fp-multiuser)
   custom_name: str
   token_key: str
   protocol: list(tcp|kcp|websocket)

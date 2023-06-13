@@ -19,6 +19,7 @@ log_level: trace to fatal logs
 server_addr: // ip of frp server
 server_port: // port of frp server 7000
 frp_type: // http
+plugins: // none or fp-multiuser
 custom_name: // name of you're connection http
 token_key: // key token for secure connection to server
 protocol: // tcp, kcp, websocket, by default connect to server in tcp
@@ -40,6 +41,7 @@ server_port: // by default 7000
 custom_name: // name of you're connection https
 token_key: // key token for secure connection to server
 frp_type: // https
+plugins: // none or fp-multiuser
 protocol: // tcp, kcp, websocket, by default connect to server in tcp
 connect_server_local_ip: //# set client binding ip when connect server, default is empty. Only when protocol = tcp or websocket, the value will be used.
 local_ip: // ip of you're local hassio install by default is 127.0.0.1
@@ -57,6 +59,7 @@ log_level: trace to fatal logs
 server_addr: // ip of frp server
 server_port: // port of frp server 7000
 frp_type: // http2https
+plugins: // none or fp-multiuser
 custom_name: // name of you're connection http
 token_key: // key token for secure connection to server
 connect_server_local_ip: //# set client binding ip when connect server, default is empty. Only when protocol = tcp or websocket, the value will be used.

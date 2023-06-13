@@ -1,3 +1,8 @@
+## 2023-06-13
+- ADD plugins options with fp-multiuser
+- ADD base addons 14.0.1
+- update frp to 0.49 version
+
 ## 2023-05-15
 - REMOVE: balancing group for http2https
 

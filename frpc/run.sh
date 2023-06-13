@@ -6,6 +6,8 @@ CONFIG_PATH=/data/options.json
 SERVER_ADDR=$(jq --raw-output '.server_addr' $CONFIG_PATH)
 SERVER_PORT=$(jq --raw-output '.server_port' $CONFIG_PATH)
 FRP_TYPE=$(jq --raw-output '.frp_type' $CONFIG_PATH)
+PLUGINS=$(jq --raw-output '.plugins' $CONFIG_PATH)
+CUSTOM_NAME=$(jq --raw-output '.custom_name' $CONFIG_PATH)
 TOKEN_KEY=$(jq --raw-output '.token_key' $CONFIG_PATH)
 PROTOCOL=$(jq --raw-output '.protocol' $CONFIG_PATH)
 CONNECT_SERVER_LOCAL_IP=$(jq --raw-output '.connect_server_local_ip' $CONFIG_PATH)
@@ -17,7 +19,6 @@ BALANCING_GROUP=$(jq --raw-output '.balancing_group' $CONFIG_PATH)
 BALANCING_GROUP_KEY=$(jq --raw-output '.balancing_group_key' $CONFIG_PATH)
 DOMAIN_PROTOCOL=$(jq --raw-output '.domain_protocol' $CONFIG_PATH)
 DOMAINS=$(jq --raw-output '.domains' $CONFIG_PATH)
-CUSTOM_NAME=$(jq --raw-output '.custom_name' $CONFIG_PATH)
 PROXY_PROTOCOL_VERSION=$(jq --raw-output '.proxy_protocol_version' $CONFIG_PATH)
 
 FRP_PATH=/var/frp
@@ -42,7 +43,13 @@ echo "[common]" >> $FRPC_CONF
 echo "server_addr = $SERVER_ADDR" >> $FRPC_CONF
 echo "server_port = $SERVER_PORT" >> $FRPC_CONF
 echo "authentication_method = token" >> $FRPC_CONF
+
+if [ "$PLUGINS" = "none" ]; then
 echo "token = $TOKEN_KEY" >> $FRPC_CONF
+elif [ "$PLUGINS" = "fp-multiuser" ]; then
+echo "user = $CUSTOM_NAME" >> $FRPC_CONF
+echo "meta_token = $TOKEN_KEY" >> $FRPC_CONF
+fi
 
 echo "[$CUSTOM_NAME]" >> $FRPC_CONF
 echo "type = http" >> $FRPC_CONF
