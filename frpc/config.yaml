@@ -26,7 +26,7 @@ options:
   subdomain: hassio
 
 schema:
-  proto: (tcp|kcp|quic|websocket|wss)str
+  proto: list(tcp|kcp|quic|websocket|wss)
   server_addr: str
   server_port: port
   token_key: str
