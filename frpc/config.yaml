@@ -1,6 +1,6 @@
 name: frp
 description: Expose a local server behind a NAT or firewall to the internet.
-version: 1.0.3
+version: 1.0.4
 url: https://github.com/hannpet/addon-frpc
 startup: application
 boot: auto
@@ -26,7 +26,7 @@ options:
   subdomain: hassio
 
 schema:
-  proto: list(tcp|kcp|quic|websocket|wss)
+  proto: list(tcp|kcp|websocket)
   server_addr: str
   server_port: port
   token_key: str
