@@ -1,6 +1,6 @@
 name: frp
 description: Expose a local server behind a NAT or firewall to the internet.
-version: dev
+version: 1.0.1
 url: https://github.com/hannpet/addon-frpc
 startup: application
 boot: auto
