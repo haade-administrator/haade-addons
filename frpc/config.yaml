@@ -21,7 +21,7 @@ options:
   server_addr: null
   server_port: 7000
   token_key: null
-  local_port: 8123
+  local_port: 80
   subdomain: hassio
 
 schema:
