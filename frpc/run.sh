@@ -30,7 +30,7 @@ echo "use_encryption = true" >> $FRPC_CONF
 echo "use_compression = false" >> $FRPC_CONF
 echo "subdomain = $SUBDOMAIN" >> $FRPC_CONF
 
-echo Start frp as client:
-echo "$FRP_PATH/frpc -c $FRPC_CONF < /dev/null"
+echo -ne "Gererated frpc.ini:\n\n$(cat $FRPC_CONF)"
 
+echo -ne \n\nStarting frp as client
 exec $FRP_PATH/frpc -c $FRPC_CONF < /dev/null
