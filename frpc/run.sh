@@ -28,7 +28,4 @@ echo "local_port = $LOCAL_PORT" >> $FRPC_CONF
 echo "use_encryption = true" >> $FRPC_CONF
 echo "use_compression = true" >> $FRPC_CONF
 
-echo -ne "Gererated frpc.ini:\n\n$(cat $FRPC_CONF)"
-
-echo -ne \n\nStarting frp as client
 exec $FRP_PATH/frpc -c $FRPC_CONF < /dev/null
