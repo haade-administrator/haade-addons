@@ -1,6 +1,6 @@
 name: frp
-description: Expose a local server behind a NAT or firewall to the internet.
-version: 1.1.2
+description: Tunnel Home Assistant to WAN (if you're behind a CG-nat or Firewall)
+version: 1.2.0
 url: https://github.com/hannpet/addon-frpc
 startup: application
 boot: auto
@@ -18,14 +18,12 @@ map:
   - backup:rw
 
 options:
-  proto: tcp
   server_addr: null
   server_port: 5000
   token_key: null
   local_port: 80
   
 schema:
-  proto: list(tcp|kcp|websocket)
   server_addr: str
   server_port: port
   token_key: str

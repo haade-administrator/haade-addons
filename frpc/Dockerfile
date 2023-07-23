@@ -41,10 +41,6 @@ RUN set -x \
     && cd /var/frp \
     && rm -rf frps frps.ini frps_full.ini
 
-
-# Copy root filesystem
-# COPY rootfs /  
-
 COPY run.sh /
 RUN chmod a+x /run.sh
 
