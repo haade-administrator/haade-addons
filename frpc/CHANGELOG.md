@@ -1,3 +1,6 @@
+# 1.2.0
+- remove proto-parameter
+- clean documentation
 ## 1.1.2
 - change icon & logo
 - cleanup debug-output
