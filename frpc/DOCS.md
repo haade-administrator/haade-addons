@@ -1,81 +1,15 @@
 # Haade Add-on: FRPc
 Adapted to [Frp by Fatedier][frp-fatedier]
+Forked by [@hannpet]
 
-full tutorial in french or english to https://www.haade.fr/blog/home-automation-smarthome-jeedom-homeassistant/tutos-haade-lab/frp-configurer-acces-distance-homeassistant/
+## Important:
+- Please add [127.0.0.1] as trusted proxy in your [config/configuration.yaml]
+### Option: 
 
-## What is FRPc
-frp is a fast reverse proxy to help you expose a local server behind a NAT or firewall to the Internet. As of now, it supports **HTTP and HTTPS** protocols, where requests can be forwarded to internal services by domain name.
-
-With frpc it is now **easy to connect from the outside without touching various parameters of your box**, you will still need a server with fixed ip in order to be able to integrate the FRPs folder, then you can connect directly to homeassistant via the 'ip address of the server or with a subdomain redirected to this server. 
-
-## Configuration
-
-**Note**: _Remember to restart the add-on when the configuration is changed.
-
-for http service:
-
-```yaml
-log_level: trace to fatal logs
-server_addr: // ip of frp server
-server_port: // port of frp server 7000
-frp_type: // http
-plugins: // none or fp-multiuser
-custom_name: // name of you're connection http
-token_key: // key token for secure connection to server
-protocol: // tcp, kcp, websocket, by default connect to server in tcp
-connect_server_local_ip: //# set client binding ip when connect server, default is empty. Only when protocol = tcp or websocket, the value will be used.
-local_ip: // ip of you're local hassio install by default is 127.0.0.1
-local_port: // by default 8123
-use_encryption: // false or true, true by default
-use_compression: // false or true, true by default
-balancing_group: // obligatory protected domains or subdomains
-balancing_group_key: // obligatory pass of balancing group
-domain_protocol: // domain or subdomain frp server
-domains: // setting you're domains or subdomains example test.haade.fr or test
-```
-for https service
-
-```yaml
-server_addr: // ip of vps
-server_port: // by default 7000
-custom_name: // name of you're connection https
-token_key: // key token for secure connection to server
-frp_type: // https
-plugins: // none or fp-multiuser
-protocol: // tcp, kcp, websocket, by default connect to server in tcp
-connect_server_local_ip: //# set client binding ip when connect server, default is empty. Only when protocol = tcp or websocket, the value will be used.
-local_ip: // ip of you're local hassio install by default is 127.0.0.1
-local_port: // by default 8123
-use_encryption: // false or true, true by default
-use_compression: // false or true, true by default
-proxy_protocol_version: // v1 or v2, v2 by default and best
-domain_protocol: // domain or subdomain frp server
-domains: // setting you're domains or subdomains example test.haade.fr or test
-```
-for http2https service ( http frp client to https frp server )
-
-```yaml
-log_level: trace to fatal logs
-server_addr: // ip of frp server
-server_port: // port of frp server 7000
-frp_type: // http2https
-plugins: // none or fp-multiuser
-custom_name: // name of you're connection http
-token_key: // key token for secure connection to server
-connect_server_local_ip: //# set client binding ip when connect server, default is empty. Only when protocol = tcp or websocket, the value will be used.
-local_ip: // ip of you're local hassio install by default is 127.0.0.1
-local_port: // by default 8123
-use_encryption: // false or true, true by default
-use_compression: // false or true, true by default
-domain_protocol: // domain or subdomain frp server
-domains: // setting you're domains or subdomains example test.haade.fr or test
-```
-
-### Option: `type`
-
-- `tcp`: partially adapted
-- `http`: full adapted to connect to webhost simply and fast but not secure
-- `https`: full adapted to connect secure mode but difficult
-- `http2https` : full adapted to connect to frp server with key https
+- `proto`: which protocol to utilize
+- `server_addr`: public server ip
+- `server_port`: frp server port
+- `token_key` : authentification token
+- `local_port` : homeassistant http-port
 
 [frp-fatedier]: https://github.com/fatedier/frp
