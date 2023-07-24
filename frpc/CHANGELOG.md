@@ -1,3 +1,5 @@
+## 1.3.0
+- respawn frps if it terminates
 ## 1.2.0
 - remove proto-parameter
 - clean documentation
