@@ -1,3 +1,5 @@
+## 1.3.1
+- fix: forgot ini file
 ## 1.3.0
 - respawn frps if it terminates
 ## 1.2.0
