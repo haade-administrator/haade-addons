@@ -31,8 +31,6 @@ RUN set -x \
     && if [ "${BUILD_ARCH}" = "armv7" ]; then ARCH="arm"; fi \
     && if [ "${BUILD_ARCH}" = "armv8" ]; then ARCH="arm64"; fi \
     && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \
-    && URL_VERSION="https://raw.githubusercontent.com/haade-administrator/haade-addons/master/version.json" \
-    && FRP_VERSION=$(curl -s $URL_VERSION | jq -e -r '.frp') \
     && wget https://github.com/fatedier/frp/releases/download/v${FRP_VERSION}/frp_${FRP_VERSION}_linux_${ARCH}.tar.gz \
     && tar -zxf frp_${FRP_VERSION}_linux_${ARCH}.tar.gz \
     && mv frp_${FRP_VERSION}_linux_${ARCH} /var \
