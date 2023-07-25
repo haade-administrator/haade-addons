@@ -13,7 +13,8 @@ FROM $BUILD_FROM
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base system
-#ARG BUILD_ARCH=amd64
+ARG BUILD_ARCH=aarch64
+ARG ARCH=arm64
 
 ENV \
     LANG=en_US.UTF-8 \
@@ -26,11 +27,6 @@ RUN apk update \
      && apk add --no-cache openssl jq wget curl nano
 
 RUN set -x \
-    && ARCH="${BUILD_ARCH}" \
-    && if [ "${BUILD_ARCH}" = "armhf" ]; then ARCH="arm"; fi \
-    && if [ "${BUILD_ARCH}" = "armv7" ]; then ARCH="arm"; fi \
-    && if [ "${BUILD_ARCH}" = "armv8" ]; then ARCH="arm64"; fi \
-    && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \
     && wget https://github.com/fatedier/frp/releases/download/v${FRP_VERSION}/frp_${FRP_VERSION}_linux_${ARCH}.tar.gz \
     && tar -zxf frp_${FRP_VERSION}_linux_${ARCH}.tar.gz \
     && mv frp_${FRP_VERSION}_linux_${ARCH} /var \
