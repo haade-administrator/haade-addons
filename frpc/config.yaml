@@ -1,6 +1,6 @@
 name: frp
 description: Tunnel Home Assistant to WAN (if you're behind a CG-nat or Firewall)
-version: 1.5.2
+version: 2.0.0
 url: https://github.com/hannpet/addon-frpc
 startup: application
 boot: auto

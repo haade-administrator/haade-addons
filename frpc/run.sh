@@ -1,8 +1,8 @@
 #!/usr/bin/with-contenv bashio
 set -e
 
-FRP_PATH=/var/frp
-FRPC_CONF=$FRP_PATH/frpc.ini
+FRPC=/app/frpc
+FRPC_CONF=/app/frpc.ini
 
 if [ -f $FRPC_CONF ]; then
   rm $FRPC_CONF
@@ -30,7 +30,7 @@ echo "use_compression = true" >> $FRPC_CONF
 # Start the client (respawn if it terminates)
 while true
 do
-  exec $FRP_PATH/frpc -c $FRPC_CONF < /dev/null &
+  exec $FRPC -c $FRPC_CONF < /dev/null &
   PID=$!
   bashio::log.info "Launched new frps-PID ${PID}"
 
