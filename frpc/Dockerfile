@@ -1,14 +1,18 @@
 ARG BUILD_FROM
+ARG BUILD_ARCH
+
 FROM $BUILD_FROM
 
 ENV FRP_VERSION 0.51.1
-# Todo: Fix HACK
-ENV ARCH arm64
 ENV LANG C.UTF-8
 
 
 WORKDIR /app
 COPY run.sh .
+
+#frp has other arch-endings
+RUN [ ${BUILD_ARCH} = aarch ] && ARCH=arm64
+RUN [ ${BUILD_ARCH} = amd64 ] && ARCH=amd64
 
 #update and install deps
 RUN apk update && apk add --no-cache openssl wget

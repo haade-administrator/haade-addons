@@ -1,5 +1,5 @@
 <div align="center">
-<img src="images/logo.png">
+<img src="logo.png">
 
 ## Home Assistant Add-on: Frpc
 **frp** tunnels your HomeAssistant to WAN

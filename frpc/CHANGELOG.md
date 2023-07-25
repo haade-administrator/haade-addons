@@ -1,3 +1,5 @@
+## 2.0.4
+- fix ARCH hack
 ## 2.0.3
 - new base
 ## 1.5.2
