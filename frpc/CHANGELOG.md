@@ -1,4 +1,4 @@
-## 1.5.0
+## 1.5.1
 - fix: frp version
 ## 1.3.1
 - fix: forgot ini file

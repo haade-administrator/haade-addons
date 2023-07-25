@@ -13,7 +13,7 @@ FROM $BUILD_FROM
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base system
-ARG BUILD_ARCH=amd64
+#ARG BUILD_ARCH=amd64
 
 ENV \
     LANG=en_US.UTF-8 \
