@@ -1,4 +1,4 @@
-## 2.0.1
+## 2.0.2
 - new base
 ## 1.5.2
 - fix: frp version
