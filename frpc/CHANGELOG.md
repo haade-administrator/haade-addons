@@ -1,3 +1,10 @@
+## 2023-12-21
+- UPDATE: frp end release
+- UPDATE: hassio-addons base
+- ADD aarch64 architecture
+- ADD Armv7 architecture
+- ADD Armv8 architecture
+
 ## 2023-06-13
 - ADD plugins options with fp-multiuser
 - ADD base addons 14.0.1
