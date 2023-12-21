@@ -13,7 +13,6 @@ arch:
   - i386
   - aarch64
   - armv7
-  - armv8
 
 map:
   - config:rw
