@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:14.0.1
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:15.0.2
 FROM $BUILD_FROM
 
 # Set shell
@@ -12,7 +12,7 @@ ENV \
     LANGUAGE=en_US:en \
     LC_ALL=en_US.UTF-8
 
-ARG FRP_VERSION=0.49.0
+ARG FRP_VERSION=0.53.2
 
 RUN apk update \
      && apk add --no-cache openssl jq wget curl nano
