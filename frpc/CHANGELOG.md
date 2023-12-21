@@ -1,3 +1,6 @@
+## 2023-12-22
+- FIX: remove bug
+
 ## 2023-12-21
 - UPDATE: frp end release
 - UPDATE: hassio-addons base
