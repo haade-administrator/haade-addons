@@ -1,3 +1,6 @@
+## 2023-12-25
+- ADD: armv8 build
+
 ## 2023-12-24
 - FIX: error number base to docker files
 
