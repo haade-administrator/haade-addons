@@ -20,7 +20,7 @@ RUN \
     jq \
     wget \
     curl \
-    nano \
+    nano
 
 RUN set -x \
     && ARCH="${BUILD_ARCH}" \
