@@ -12,7 +12,7 @@ ENV \
     LANGUAGE=en_US:en \
     LC_ALL=en_US.UTF-8
 
-ARG FRP_VERSION=0.53.2
+ARG FRP_VERSION=0.49.0
 
 RUN \
     apk add --no-cache \
