@@ -1,11 +1,16 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM as base
 
-ENV LANG C.UTF-8
-ARG BUILD_VERSION
-
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
+# Setup base system
+ARG BUILD_ARCH=amd64
+
+ENV \
+    LANG=en_US.UTF-8 \
+    LANGUAGE=en_US:en \
+    LC_ALL=en_US.UTF-8
 
 ARG FRP_VERSION=0.49.0
 
