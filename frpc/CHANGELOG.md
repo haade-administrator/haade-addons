@@ -1,3 +1,6 @@
+## 2024-02-06
+- FIX: change base addons to Alpine 3.18
+
 ## 2023-12-27
 - ADD: armv6 architecture
 - ADD: i386 architecture
