@@ -4,6 +4,9 @@ FROM $BUILD_FROM as base
 ENV LANG C.UTF-8
 ARG BUILD_VERSION
 
+# Set shell
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
 ARG FRP_VERSION=0.49.0
 
 RUN \
