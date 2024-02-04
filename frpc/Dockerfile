@@ -1,16 +1,8 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:15.0.2
-FROM $BUILD_FROM
+ARG BUILD_FROM
+FROM $BUILD_FROM as base
 
-# Set shell
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-
-# Setup base system
-ARG BUILD_ARCH=amd64
-
-ENV \
-    LANG=en_US.UTF-8 \
-    LANGUAGE=en_US:en \
-    LC_ALL=en_US.UTF-8
+ENV LANG C.UTF-8
+ARG BUILD_VERSION
 
 ARG FRP_VERSION=0.49.0
 
