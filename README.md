@@ -14,7 +14,11 @@
 Add the repository URL under **Supervisor → Add-on store → ⋮ → Manage add-on repositories**:
 
     https://github.com/haade-administrator/haade-addons
-    
+
+Ou clic directement sur le lien ci-dessous
+
+[![Open your Home Assistant instance and show the dashboard of an add-on.](https://my.home-assistant.io/badges/supervisor_addon.svg)](https://my.home-assistant.io/redirect/supervisor_addon/?repository_url=https%3A%2F%2Fgithub.com%2Fhaade-administrator%2Fhaade-addons&addon=Haade)
+
 The repository includes one add-ons for moment:
 
 frp client is a stable release that tracks the released versions of frp.
